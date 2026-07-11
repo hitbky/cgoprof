@@ -1,0 +1,74 @@
+[
+  {
+    "baseline_median_ms": 21.609041,
+    "baseline_output": "500000500000",
+    "baseline_runs_ms": [
+      30.613709,
+      21.609041,
+      18.871333
+    ],
+    "case": "small_calls",
+    "optimized_median_ms": 4.621792,
+    "optimized_output": "500000500000",
+    "optimized_runs_ms": [
+      5.71825,
+      4.621792,
+      4.342209
+    ],
+    "speedup": 4.675468086837314
+  },
+  {
+    "baseline_median_ms": 19.324625,
+    "baseline_output": "5800000",
+    "baseline_runs_ms": [
+      24.885542,
+      19.324625,
+      17.115417
+    ],
+    "case": "conversion_copy",
+    "optimized_median_ms": 8.044292,
+    "optimized_output": "5800000",
+    "optimized_runs_ms": [
+      9.671459,
+      8.044292,
+      6.891125
+    ],
+    "speedup": 2.4022779133328327
+  },
+  {
+    "baseline_median_ms": 9.655166,
+    "baseline_output": "2000000",
+    "baseline_runs_ms": [
+      12.586625,
+      9.655166,
+      8.350334
+    ],
+    "case": "pointer_check",
+    "optimized_median_ms": 6.47325,
+    "optimized_output": "2000000",
+    "optimized_runs_ms": [
+      7.519834,
+      6.47325,
+      5.775541
+    ],
+    "speedup": 1.4915484493878652
+  },
+  {
+    "baseline_median_ms": 11.86325,
+    "baseline_output": "5000050000",
+    "baseline_runs_ms": [
+      14.48225,
+      11.86325,
+      10.214834
+    ],
+    "case": "callback_pingpong",
+    "optimized_median_ms": 5.365333,
+    "optimized_output": "5000050000",
+    "optimized_runs_ms": [
+      6.843084,
+      5.365333,
+      5.078292
+    ],
+    "speedup": 2.2110929554605465
+  }
+]

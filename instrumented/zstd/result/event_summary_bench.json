@@ -1,0 +1,25 @@
+{
+  "callsite_count_instrumented_scan": 41,
+  "callsite_count_original_scan": 48,
+  "duration_seconds_approx": 0.023,
+  "event_bytes_by_kind": {
+    "cgo_call": 0,
+    "conversion": 0,
+    "pointer_check": 0
+  },
+  "event_count": 687,
+  "event_counts_by_kind": {
+    "cgo_call": 409,
+    "conversion": 2,
+    "pointer_check": 276
+  },
+  "finding_count": 0,
+  "first_timestamp_ns": 1782716551814217000,
+  "last_timestamp_ns": 1782716551837679000,
+  "metric_site_count": 44,
+  "profile": "instrumented/zstd/result/cgoprof_bench.jsonl",
+  "profile_size_bytes": 111749,
+  "rule_counts": {},
+  "severity_counts": {},
+  "workload": "bench"
+}

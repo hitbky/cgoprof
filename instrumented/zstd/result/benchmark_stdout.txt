@@ -1,0 +1,23 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/DataDog/zstd
+cpu: Apple M5 Pro
+BenchmarkBulkCompress-15                   	      10	     50238 ns/op	   1.83 MB/s	    2998 B/op	      36 allocs/op
+BenchmarkBulkDecompress-15                 	      10	     42371 ns/op	   1.35 MB/s	    4027 B/op	      49 allocs/op
+BenchmarkCtxCompression-15                 	      10	    148808 ns/op	7046.48 MB/s	    1116 B/op	      13 allocs/op
+BenchmarkCtxDecompression-15               	      10	    115525 ns/op	9076.61 MB/s	    2112 B/op	      26 allocs/op
+--- BENCH: BenchmarkCtxDecompression-15
+    zstd_ctx_test.go:221: Reduced from 1048576 to 399
+    zstd_ctx_test.go:221: Reduced from 1048576 to 399
+BenchmarkSmallWriteStreamCompression/all-zeros-15         	      10	     12875 ns/op	   0.08 MB/s	         1.900 compressed_bytes/op	    1241 B/op	      15 allocs/op
+BenchmarkSmallWriteStreamCompression/count-15             	      10	     13025 ns/op	   0.08 MB/s	         1.900 compressed_bytes/op	    1241 B/op	      15 allocs/op
+BenchmarkSmallWriteStreamCompression/random-15            	      10	     11433 ns/op	   0.09 MB/s	         1.900 compressed_bytes/op	    1241 B/op	      15 allocs/op
+BenchmarkStreamCompression-15                             	      10	    145933 ns/op	7185.31 MB/s	  106953 B/op	      15 allocs/op
+BenchmarkStreamDecompression-15                           	      10	    162750 ns/op	6442.86 MB/s	   11556 B/op	     136 allocs/op
+BenchmarkCompression-15                                   	      10	    113625 ns/op	9228.39 MB/s	    1321 B/op	      13 allocs/op
+BenchmarkDecompression-15                                 	      10	     50404 ns/op	20803.26 MB/s	    2112 B/op	      26 allocs/op
+--- BENCH: BenchmarkDecompression-15
+    zstd_test.go:368: Reduced from 1048576 to 399
+    zstd_test.go:368: Reduced from 1048576 to 399
+PASS
+ok  	github.com/DataDog/zstd	0.431s

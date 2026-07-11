@@ -1,0 +1,16 @@
+CGOProf Analysis Report
+=======================
+
+Call sites: 43
+Findings: 2
+
+[MEDIUM] small-call-detector at zstd_stream.go:192 (ZSTD_compressStream2_wrapper)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=3003, avg_cgo_ns=141.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] pointer-check-overhead-detector at zstd_stream.go:192 (ZSTD_compressStream2_wrapper)
+  cgo pointer checking is a visible part of the cross-language cost.
+  Evidence: pointer_check_count=3003, pointer_check_ms=0.15, estimated_ratio=0.262
+  Recommendation: Audit whether the C function stores Go pointers or calls back into Go. If the cgo safety contract holds, consider #cgo noescape or reducing pointer passing.
+

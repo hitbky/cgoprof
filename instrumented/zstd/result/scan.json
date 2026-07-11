@@ -1,0 +1,336 @@
+{
+  "callsites": [
+    {
+      "c_symbol": "ZSTD_getErrorName",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"a1ff806bd6\", \"ZSTD_getErrorName\")",
+      "file": "errors.go",
+      "function": "<package>",
+      "line": 16,
+      "site_id": "a1ff806bd6"
+    },
+    {
+      "c_symbol": "ZSTD_isError",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"4b06c53a01\", \"ZSTD_isError\")",
+      "file": "errors.go",
+      "function": "cIsError",
+      "line": 30,
+      "site_id": "4b06c53a01"
+    },
+    {
+      "c_symbol": "ZSTD_compressBound",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"ad1223112c\", \"ZSTD_compressBound\")",
+      "file": "zstd.go",
+      "function": "cCompressBound",
+      "line": 58,
+      "site_id": "ad1223112c"
+    },
+    {
+      "c_symbol": "ZSTD_getFrameContentSize",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"47a5b5ad9e\", \"ZSTD_getFrameContentSize\")",
+      "file": "zstd.go",
+      "function": "decompressSizeHint",
+      "line": 77,
+      "site_id": "47a5b5ad9e"
+    },
+    {
+      "c_symbol": "ZSTD_compress",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"780103341b\", \"ZSTD_compress\")",
+      "file": "zstd.go",
+      "function": "CompressLevel",
+      "line": 120,
+      "site_id": "780103341b"
+    },
+    {
+      "c_symbol": "ZSTD_compress",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"3bfca73bca\", \"ZSTD_compress\")",
+      "file": "zstd.go",
+      "function": "CompressLevel",
+      "line": 132,
+      "site_id": "3bfca73bca"
+    },
+    {
+      "c_symbol": "ZSTD_decompress",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"1e0d98d4c8\", \"ZSTD_decompress\")",
+      "file": "zstd.go",
+      "function": "DecompressInto",
+      "line": 190,
+      "site_id": "1e0d98d4c8"
+    },
+    {
+      "c_symbol": "ZSTD_createCDict",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"32ae2df2c7\", \"ZSTD_createCDict\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 42,
+      "site_id": "32ae2df2c7"
+    },
+    {
+      "c_symbol": "ZSTD_createDDict",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"50ad5844c4\", \"ZSTD_createDDict\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 55,
+      "site_id": "50ad5844c4"
+    },
+    {
+      "c_symbol": "ZSTD_compress_usingCDict",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"da50a33d01\", \"ZSTD_compress_usingCDict\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 93,
+      "site_id": "da50a33d01"
+    },
+    {
+      "c_symbol": "ZSTD_compress_usingCDict",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"b6f10c40af\", \"ZSTD_compress_usingCDict\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 107,
+      "site_id": "b6f10c40af"
+    },
+    {
+      "c_symbol": "ZSTD_freeCCtx",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"aa3120c1d6\", \"ZSTD_freeCCtx\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 120,
+      "site_id": "aa3120c1d6"
+    },
+    {
+      "c_symbol": "ZSTD_createDCtx",
+      "expression": "__cgoprof_end_12 := prof.BeginCall(\"e7596ec17b\", \"ZSTD_createDCtx\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 150,
+      "site_id": "e7596ec17b"
+    },
+    {
+      "c_symbol": "ZSTD_decompress_usingDDict",
+      "expression": "__cgoprof_end_14 := prof.BeginCall(\"2f168891b7\", \"ZSTD_decompress_usingDDict\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 155,
+      "site_id": "2f168891b7"
+    },
+    {
+      "c_symbol": "ZSTD_freeDCtx",
+      "expression": "__cgoprof_end_16 := prof.BeginCall(\"b0dd6689ea\", \"ZSTD_freeDCtx\")",
+      "file": "zstd_bulk.go",
+      "function": "NewBulkProcessor",
+      "line": 166,
+      "site_id": "b0dd6689ea"
+    },
+    {
+      "c_symbol": "ZSTD_freeCDict",
+      "expression": "__cgoprof_end_17 := prof.BeginCall(\"cf22c1d399\", \"ZSTD_freeCDict\")",
+      "file": "zstd_bulk.go",
+      "function": "finalizeBulkProcessor",
+      "line": 182,
+      "site_id": "cf22c1d399"
+    },
+    {
+      "c_symbol": "ZSTD_freeDDict",
+      "expression": "__cgoprof_end_18 := prof.BeginCall(\"f6e5f2fa46\", \"ZSTD_freeDDict\")",
+      "file": "zstd_bulk.go",
+      "function": "finalizeBulkProcessor",
+      "line": 187,
+      "site_id": "f6e5f2fa46"
+    },
+    {
+      "c_symbol": "ZSTD_createCCtx",
+      "expression": "cctx: C.ZSTD_createCCtx(),",
+      "file": "zstd_ctx.go",
+      "function": "NewCtx",
+      "line": 55,
+      "site_id": "2754ca2a4e"
+    },
+    {
+      "c_symbol": "ZSTD_createDCtx",
+      "expression": "dctx: C.ZSTD_createDCtx(),",
+      "file": "zstd_ctx.go",
+      "function": "NewCtx",
+      "line": 56,
+      "site_id": "ac7e1a4460"
+    },
+    {
+      "c_symbol": "ZSTD_compressCCtx",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"0eebe47a29\", \"ZSTD_compressCCtx\")",
+      "file": "zstd_ctx.go",
+      "function": "NewCtx",
+      "line": 81,
+      "site_id": "0eebe47a29"
+    },
+    {
+      "c_symbol": "ZSTD_compressCCtx",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"9ae608449d\", \"ZSTD_compressCCtx\")",
+      "file": "zstd_ctx.go",
+      "function": "NewCtx",
+      "line": 94,
+      "site_id": "9ae608449d"
+    },
+    {
+      "c_symbol": "ZSTD_decompressDCtx",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"4eda8a8dc7\", \"ZSTD_decompressDCtx\")",
+      "file": "zstd_ctx.go",
+      "function": "NewCtx",
+      "line": 143,
+      "site_id": "4eda8a8dc7"
+    },
+    {
+      "c_symbol": "ZSTD_freeCCtx",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"d64ed87637\", \"ZSTD_freeCCtx\")",
+      "file": "zstd_ctx.go",
+      "function": "finalizeCtx",
+      "line": 157,
+      "site_id": "d64ed87637"
+    },
+    {
+      "c_symbol": "ZSTD_freeDCtx",
+      "expression": "__cgoprof_end_8 := prof.BeginCall(\"66ef532682\", \"ZSTD_freeDCtx\")",
+      "file": "zstd_ctx.go",
+      "function": "finalizeCtx",
+      "line": 160,
+      "site_id": "66ef532682"
+    },
+    {
+      "c_symbol": "ZSTD_createCStream",
+      "expression": "__cgoprof_ret_2 := C.ZSTD_createCStream()",
+      "file": "zstd_stream.go",
+      "function": "NewWriterLevelDict",
+      "line": 126,
+      "site_id": "143d533cc1"
+    },
+    {
+      "c_symbol": "ZSTD_CCtx_loadDictionary",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"4f703eb30e\", \"ZSTD_CCtx_loadDictionary\")",
+      "file": "zstd_stream.go",
+      "function": "NewWriterLevelDict",
+      "line": 132,
+      "site_id": "4f703eb30e"
+    },
+    {
+      "c_symbol": "ZSTD_CCtx_setParameter",
+      "expression": "prof.BeginCall(\"2d74b22f1d\", \"ZSTD_CCtx_setParameter\")",
+      "file": "zstd_stream.go",
+      "function": "NewWriterLevelDict",
+      "line": 144,
+      "site_id": "2d74b22f1d"
+    },
+    {
+      "c_symbol": "ZSTD_compressStream2_wrapper",
+      "expression": "__cgoprof_end_8 := prof.BeginCall(\"28ac715d93\", \"ZSTD_compressStream2_wrapper\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 192,
+      "site_id": "28ac715d93"
+    },
+    {
+      "c_symbol": "ZSTD_compressStream2_flush",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"a70c41d2ab\", \"ZSTD_compressStream2_flush\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 248,
+      "site_id": "a70c41d2ab"
+    },
+    {
+      "c_symbol": "ZSTD_freeCStream",
+      "expression": "__cgoprof_end_10 := prof.BeginCall(\"59a24747b6\", \"ZSTD_freeCStream\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 290,
+      "site_id": "59a24747b6"
+    },
+    {
+      "c_symbol": "ZSTD_compressStream2_finish",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"c2db3a41ca\", \"ZSTD_compressStream2_finish\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 300,
+      "site_id": "c2db3a41ca"
+    },
+    {
+      "c_symbol": "ZSTD_freeCStream",
+      "expression": "__cgoprof_end_12 := prof.BeginCall(\"ee1dacb979\", \"ZSTD_freeCStream\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 312,
+      "site_id": "ee1dacb979"
+    },
+    {
+      "c_symbol": "ZSTD_freeCStream",
+      "expression": "__cgoprof_end_13 := prof.BeginCall(\"5c404ee783\", \"ZSTD_freeCStream\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 321,
+      "site_id": "5c404ee783"
+    },
+    {
+      "c_symbol": "ZSTD_freeCStream",
+      "expression": "__cgoprof_end_14 := prof.BeginCall(\"193a303c34\", \"ZSTD_freeCStream\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeWriter",
+      "line": 335,
+      "site_id": "193a303c34"
+    },
+    {
+      "c_symbol": "ZSTD_createDStream",
+      "expression": "__cgoprof_end_16 := prof.BeginCall(\"a108991e46\", \"ZSTD_createDStream\")",
+      "file": "zstd_stream.go",
+      "function": "NewReaderDict",
+      "line": 435,
+      "site_id": "a108991e46"
+    },
+    {
+      "c_symbol": "ZSTD_initDStream",
+      "expression": "__cgoprof_end_18 := prof.BeginCall(\"cf69623622\", \"ZSTD_initDStream\")",
+      "file": "zstd_stream.go",
+      "function": "NewReaderDict",
+      "line": 440,
+      "site_id": "cf69623622"
+    },
+    {
+      "c_symbol": "ZSTD_DCtx_reset",
+      "expression": "__cgoprof_end_20 := prof.BeginCall(\"03a0840d77\", \"ZSTD_DCtx_reset\")",
+      "file": "zstd_stream.go",
+      "function": "NewReaderDict",
+      "line": 445,
+      "site_id": "03a0840d77"
+    },
+    {
+      "c_symbol": "ZSTD_DCtx_loadDictionary",
+      "expression": "__cgoprof_end_22 := prof.BeginCall(\"341ab35b5a\", \"ZSTD_DCtx_loadDictionary\")",
+      "file": "zstd_stream.go",
+      "function": "NewReaderDict",
+      "line": 453,
+      "site_id": "341ab35b5a"
+    },
+    {
+      "c_symbol": "ZSTD_freeDStream",
+      "expression": "__cgoprof_end_25 := prof.BeginCall(\"19e7b8563f\", \"ZSTD_freeDStream\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeReader",
+      "line": 498,
+      "site_id": "19e7b8563f"
+    },
+    {
+      "c_symbol": "ZSTD_freeDStream",
+      "expression": "__cgoprof_end_26 := prof.BeginCall(\"95a5b67edd\", \"ZSTD_freeDStream\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeReader",
+      "line": 514,
+      "site_id": "95a5b67edd"
+    },
+    {
+      "c_symbol": "ZSTD_decompressStream_wrapper",
+      "expression": "__cgoprof_end_28 := prof.BeginCall(\"8b78ed2292\", \"ZSTD_decompressStream_wrapper\")",
+      "file": "zstd_stream.go",
+      "function": "finalizeReader",
+      "line": 594,
+      "site_id": "8b78ed2292"
+    }
+  ],
+  "directives": {
+    "nocallback": [],
+    "noescape": []
+  }
+}

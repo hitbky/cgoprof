@@ -1,0 +1,591 @@
+[
+  {
+    "evidence": {
+      "avg_cgo_ns": 59.7,
+      "boundary_ratio": "unknown",
+      "call_count": 51531,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "65c8963533",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 67.9,
+      "boundary_ratio": "unknown",
+      "call_count": 51456,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "4824e3bc4e",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 70.1,
+      "boundary_ratio": "unknown",
+      "call_count": 51523,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "2367198b76",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 51523,
+      "conversion_bytes": 762457,
+      "conversion_count": 51523,
+      "free_count": 51523,
+      "malloc_count": 51523,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "2367198b76",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 80.1,
+      "boundary_ratio": "unknown",
+      "call_count": 51523,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "f600541940",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 183.3,
+      "boundary_ratio": "unknown",
+      "call_count": 51525,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "3d98770d67",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 110.8,
+      "boundary_ratio": "unknown",
+      "call_count": 1197,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "625f108886",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 1197,
+      "conversion_bytes": 17530,
+      "conversion_count": 1197,
+      "free_count": 1197,
+      "malloc_count": 1197,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "625f108886",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 17806.1,
+      "boundary_ratio": "unknown",
+      "call_count": 1197,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "ed242be7f6",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 84.3,
+      "boundary_ratio": "unknown",
+      "call_count": 1197,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "6c3b16d491",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 79.0,
+      "boundary_ratio": "unknown",
+      "call_count": 10306,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "96c3c576e9",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 120.9,
+      "boundary_ratio": "unknown",
+      "call_count": 10305,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "765d6f349a",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 10305,
+      "conversion_bytes": 781454,
+      "conversion_count": 10305,
+      "free_count": 10305,
+      "malloc_count": 10305,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "765d6f349a",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 89.2,
+      "boundary_ratio": "unknown",
+      "call_count": 10305,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "e4a7e0dd10",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 27787.1,
+      "boundary_ratio": "unknown",
+      "call_count": 10305,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "9931e9a822",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 5232.2,
+      "boundary_ratio": "unknown",
+      "call_count": 10287,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "01e1c8dc50",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 105.5,
+      "boundary_ratio": "unknown",
+      "call_count": 63070,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "18a9fe4558",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 63070,
+      "conversion_bytes": 2395022,
+      "conversion_count": 63070,
+      "free_count": 63070,
+      "malloc_count": 63070,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "18a9fe4558",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 108.2,
+      "boundary_ratio": "unknown",
+      "call_count": 63070,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "d59d77ce6f",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 1328.2,
+      "boundary_ratio": "unknown",
+      "call_count": 63070,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "fd8e87bea7",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 440.4,
+      "boundary_ratio": "unknown",
+      "call_count": 63053,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "a588f9646e",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 55.3,
+      "boundary_ratio": "unknown",
+      "call_count": 63234,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "8b3d601ccd",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 68.2,
+      "boundary_ratio": "unknown",
+      "call_count": 11586,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "0fff59e08a",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 65.1,
+      "boundary_ratio": "unknown",
+      "call_count": 10656,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "24af8d6f0b",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 93.8,
+      "boundary_ratio": "unknown",
+      "call_count": 63234,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "212c04db36",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 99.3,
+      "boundary_ratio": "unknown",
+      "call_count": 60383,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "da24077fea",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "estimated_ratio": 0.335,
+      "pointer_check_count": 60383,
+      "pointer_check_ms": 3.019
+    },
+    "recommendation": "Audit whether the C function stores Go pointers or calls back into Go. If the cgo safety contract holds, consider #cgo noescape or reducing pointer passing.",
+    "rule": "pointer-check-overhead-detector",
+    "severity": "medium",
+    "site_id": "da24077fea",
+    "summary": "cgo pointer checking is a visible part of the cross-language cost."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 47.6,
+      "boundary_ratio": "unknown",
+      "call_count": 1001,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "f6d288b9bf",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ms": 0.294,
+      "call_count": 2851,
+      "scheduler_block_ms": 458.156,
+      "total_cgo_ms": 838.566
+    },
+    "recommendation": "Move blocking waits to Go when possible, use asynchronous/nonblocking C APIs, or bound concurrency around this cgo call.",
+    "rule": "blocking-cgo-detector",
+    "severity": "medium",
+    "site_id": "3995321bec",
+    "summary": "Long-running cgo calls can hold an OS thread and reduce Go scheduler flexibility."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 114.1,
+      "boundary_ratio": "unknown",
+      "call_count": 60374,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "778b508ad6",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 88.2,
+      "boundary_ratio": "unknown",
+      "call_count": 60402,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "25cc82ac3b",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 258.3,
+      "boundary_ratio": "unknown",
+      "call_count": 60402,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "1fb70eb066",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 60402,
+      "conversion_bytes": 0,
+      "conversion_count": 60402,
+      "free_count": 0,
+      "malloc_count": 0,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "1fb70eb066",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "call_count": 60402,
+      "inbound_conversion_bytes": 0,
+      "inbound_conversion_count": 60402
+    },
+    "recommendation": "Avoid materializing Go strings/bytes on every call; cache immutable metadata, return lightweight handles, or batch native-to-Go decoding.",
+    "rule": "inbound-copy-detector",
+    "severity": "medium",
+    "site_id": "1fb70eb066",
+    "summary": "C-to-Go string or byte conversion repeatedly copies native data into Go memory."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 97.1,
+      "boundary_ratio": "unknown",
+      "call_count": 60400,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "7c53d39812",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 337.6,
+      "boundary_ratio": "unknown",
+      "call_count": 60400,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "3db7b9fed5",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 60400,
+      "conversion_bytes": 0,
+      "conversion_count": 60400,
+      "free_count": 0,
+      "malloc_count": 0,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "3db7b9fed5",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "call_count": 60400,
+      "inbound_conversion_bytes": 0,
+      "inbound_conversion_count": 60400
+    },
+    "recommendation": "Avoid materializing Go strings/bytes on every call; cache immutable metadata, return lightweight handles, or batch native-to-Go decoding.",
+    "rule": "inbound-copy-detector",
+    "severity": "medium",
+    "site_id": "3db7b9fed5",
+    "summary": "C-to-Go string or byte conversion repeatedly copies native data into Go memory."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 70.1,
+      "boundary_ratio": "unknown",
+      "call_count": 20000,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "d828f83e98",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 4614.8,
+      "boundary_ratio": "unknown",
+      "call_count": 90518,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "7f9abaef1c",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 117.5,
+      "boundary_ratio": "unknown",
+      "call_count": 60498,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "b0d22a4c6f",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "avg_cgo_ns": 697.8,
+      "boundary_ratio": "unknown",
+      "call_count": 30431,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "1425daf1e7",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "call_count": 30431,
+      "conversion_bytes": 65880,
+      "conversion_count": 30431,
+      "free_count": 0,
+      "malloc_count": 0,
+      "memcpy_bytes": 0,
+      "memcpy_count": 0
+    },
+    "recommendation": "Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.",
+    "rule": "conversion-copy-detector",
+    "severity": "medium",
+    "site_id": "1425daf1e7",
+    "summary": "Repeated Go/C data conversion or memory copying appears on this cgo path."
+  },
+  {
+    "evidence": {
+      "call_count": 30431,
+      "inbound_conversion_bytes": 65880,
+      "inbound_conversion_count": 30431
+    },
+    "recommendation": "Avoid materializing Go strings/bytes on every call; cache immutable metadata, return lightweight handles, or batch native-to-Go decoding.",
+    "rule": "inbound-copy-detector",
+    "severity": "medium",
+    "site_id": "1425daf1e7",
+    "summary": "C-to-Go string or byte conversion repeatedly copies native data into Go memory."
+  }
+]

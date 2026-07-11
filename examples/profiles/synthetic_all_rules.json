@@ -1,0 +1,53 @@
+{
+  "events": [
+    {
+      "kind": "cgo_call",
+      "site_id": "small-add-one",
+      "duration_ns": 30000,
+      "function": "add_one",
+      "repeat": 1000,
+      "detail": {"boundary_ns": "20000", "c_work_ns": "10000"}
+    },
+    {
+      "kind": "conversion",
+      "site_id": "cstring-hot-loop",
+      "bytes": 28,
+      "repeat": 100,
+      "detail": {"op": "C.CString"}
+    },
+    {
+      "kind": "memory",
+      "site_id": "cstring-hot-loop",
+      "bytes": 28,
+      "repeat": 100,
+      "detail": {"op": "malloc"}
+    },
+    {
+      "kind": "memory",
+      "site_id": "cstring-hot-loop",
+      "bytes": 28,
+      "repeat": 100,
+      "detail": {"op": "free"}
+    },
+    {
+      "kind": "pointer_check",
+      "site_id": "sum-ints-pointer",
+      "duration_ns": 80000,
+      "repeat": 100
+    },
+    {
+      "kind": "callback",
+      "site_id": "callback-many",
+      "source": "call_back_many",
+      "duration_ns": 100,
+      "repeat": 1000
+    },
+    {
+      "kind": "conversion",
+      "site_id": "native-string-copy",
+      "bytes": 128,
+      "repeat": 1000,
+      "detail": {"op": "C.GoBytes"}
+    }
+  ]
+}

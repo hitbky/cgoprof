@@ -1,0 +1,26 @@
+{
+  "duration_seconds_approx": 0.033,
+  "event_bytes_by_kind": {
+    "cgo_call": 0,
+    "pointer_check": 0
+  },
+  "event_count": 6046,
+  "event_counts_by_kind": {
+    "cgo_call": 3034,
+    "pointer_check": 3012
+  },
+  "finding_count": 2,
+  "first_timestamp_ns": 1782717518613141000,
+  "last_timestamp_ns": 1782717518646050000,
+  "metric_site_count": 43,
+  "profile": "instrumented/zstd/result/cgoprof_bench_smallwrite_1000x.jsonl",
+  "profile_size_bytes": 967930,
+  "rule_counts": {
+    "pointer-check-overhead-detector": 1,
+    "small-call-detector": 1
+  },
+  "severity_counts": {
+    "medium": 2
+  },
+  "workload": "bench_smallwrite_1000x"
+}

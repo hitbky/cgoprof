@@ -1,0 +1,226 @@
+CGOProf Analysis Report
+=======================
+
+Call sites: 254
+Findings: 44
+
+[MEDIUM] small-call-detector at callback.go:193 (malloc)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=51531, avg_cgo_ns=59.7, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at callback.go:224 (free)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=51456, avg_cgo_ns=67.9, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:826 (CString)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=51523, avg_cgo_ns=70.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:826 (CString)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=51523, conversion_count=51523, conversion_bytes=762457, malloc_count=51523, free_count=51523, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] small-call-detector at sqlite3.go:832 (free)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=51523, avg_cgo_ns=80.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:848 (_sqlite3_create_function)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=51525, avg_cgo_ns=183.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:1105 (CString)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1197, avg_cgo_ns=110.8, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:1105 (CString)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=1197, conversion_count=1197, conversion_bytes=17530, malloc_count=1197, free_count=1197, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] small-call-detector at sqlite3.go:1110 (_sqlite3_exec_no_args)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1197, avg_cgo_ns=17806.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:1124 (free)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1197, avg_cgo_ns=84.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:1302 (sqlite3_threadsafe)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=10306, avg_cgo_ns=79.0, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:1699 (CString)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=10305, avg_cgo_ns=120.9, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:1699 (CString)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=10305, conversion_count=10305, conversion_bytes=781454, malloc_count=10305, free_count=10305, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] small-call-detector at sqlite3.go:1705 (free)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=10305, avg_cgo_ns=89.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:1725 (_sqlite3_open_v2)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=10305, avg_cgo_ns=27787.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2090 (sqlite3_close_v2)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=10287, avg_cgo_ns=5232.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2206 (CString)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=63070, avg_cgo_ns=105.5, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:2206 (CString)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=63070, conversion_count=63070, conversion_bytes=2395022, malloc_count=63070, free_count=63070, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] small-call-detector at sqlite3.go:2212 (free)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=63070, avg_cgo_ns=108.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2219 (_sqlite3_prepare_v2_internal)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=63070, avg_cgo_ns=1328.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2423 (sqlite3_finalize)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=63053, avg_cgo_ns=440.4, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2435 (sqlite3_bind_parameter_count)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=63234, avg_cgo_ns=55.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2451 (_sqlite3_bind_text)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=11586, avg_cgo_ns=68.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2467 (sqlite3_bind_int64)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=10656, avg_cgo_ns=65.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2580 (_sqlite3_reset_clear)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=63234, avg_cgo_ns=93.8, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2651 (malloc)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60383, avg_cgo_ns=99.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] pointer-check-overhead-detector at sqlite3.go:2651 (malloc)
+  cgo pointer checking is a visible part of the cross-language cost.
+  Evidence: pointer_check_count=60383, pointer_check_ms=3.019, estimated_ratio=0.335
+  Recommendation: Audit whether the C function stores Go pointers or calls back into Go. If the cgo safety contract holds, consider #cgo noescape or reducing pointer passing.
+
+[MEDIUM] small-call-detector at sqlite3.go:2720 (sqlite3_interrupt)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1001, avg_cgo_ns=47.6, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] blocking-cgo-detector at sqlite3.go:2745 (_sqlite3_step_row_internal)
+  Long-running cgo calls can hold an OS thread and reduce Go scheduler flexibility.
+  Evidence: call_count=2851, avg_cgo_ms=0.294, total_cgo_ms=838.566, scheduler_block_ms=458.156
+  Recommendation: Move blocking waits to Go when possible, use asynchronous/nonblocking C APIs, or bound concurrency around this cgo call.
+
+[MEDIUM] small-call-detector at sqlite3.go:2790 (free)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60374, avg_cgo_ns=114.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2826 (sqlite3_column_name)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60402, avg_cgo_ns=88.2, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2830 (GoString)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60402, avg_cgo_ns=258.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:2830 (GoString)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=60402, conversion_count=60402, conversion_bytes=0, malloc_count=0, free_count=0, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] inbound-copy-detector at sqlite3.go:2830 (GoString)
+  C-to-Go string or byte conversion repeatedly copies native data into Go memory.
+  Evidence: inbound_conversion_count=60402, inbound_conversion_bytes=0, call_count=60402
+  Recommendation: Avoid materializing Go strings/bytes on every call; cache immutable metadata, return lightweight handles, or batch native-to-Go decoding.
+
+[MEDIUM] small-call-detector at sqlite3.go:2843 (sqlite3_column_decltype)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60400, avg_cgo_ns=97.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2850 (GoString)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60400, avg_cgo_ns=337.6, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:2850 (GoString)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=60400, conversion_count=60400, conversion_bytes=0, malloc_count=0, free_count=0, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] inbound-copy-detector at sqlite3.go:2850 (GoString)
+  C-to-Go string or byte conversion repeatedly copies native data into Go memory.
+  Evidence: inbound_conversion_count=60400, inbound_conversion_bytes=0, call_count=60400
+  Recommendation: Avoid materializing Go strings/bytes on every call; cache immutable metadata, return lightweight handles, or batch native-to-Go decoding.
+
+[MEDIUM] small-call-detector at sqlite3.go:2898 (sqlite3_interrupt)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=20000, avg_cgo_ns=70.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2912 (_sqlite3_step_internal)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=90518, avg_cgo_ns=4614.8, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2934 (_sqlite3_column_values)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=60498, avg_cgo_ns=117.5, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at sqlite3.go:2990 (GoStringN)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=30431, avg_cgo_ns=697.8, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at sqlite3.go:2990 (GoStringN)
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=30431, conversion_count=30431, conversion_bytes=65880, malloc_count=0, free_count=0, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+
+[MEDIUM] inbound-copy-detector at sqlite3.go:2990 (GoStringN)
+  C-to-Go string or byte conversion repeatedly copies native data into Go memory.
+  Evidence: inbound_conversion_count=30431, inbound_conversion_bytes=65880, call_count=30431
+  Recommendation: Avoid materializing Go strings/bytes on every call; cache immutable metadata, return lightweight handles, or batch native-to-Go decoding.
+

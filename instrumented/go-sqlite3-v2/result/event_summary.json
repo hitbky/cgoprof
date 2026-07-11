@@ -1,0 +1,33 @@
+{
+  "callsite_count_static_scan": 239,
+  "event_bytes_by_kind": {
+    "callback": 0,
+    "cgo_call": 0,
+    "conversion": 4022826,
+    "memory": 6424638,
+    "pointer_check": 0,
+    "scheduler": 0
+  },
+  "event_count": 2204007,
+  "event_counts_by_kind": {
+    "callback": 90,
+    "cgo_call": 1282078,
+    "conversion": 277547,
+    "memory": 475973,
+    "pointer_check": 168279,
+    "scheduler": 40
+  },
+  "finding_count": 44,
+  "metric_site_count": 254,
+  "profile": "instrumented/go-sqlite3-v2/result/cgoprof.jsonl",
+  "rule_counts": {
+    "blocking-cgo-detector": 1,
+    "conversion-copy-detector": 7,
+    "inbound-copy-detector": 3,
+    "pointer-check-overhead-detector": 1,
+    "small-call-detector": 32
+  },
+  "severity_counts": {
+    "medium": 44
+  }
+}

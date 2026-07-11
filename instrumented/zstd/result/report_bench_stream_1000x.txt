@@ -1,0 +1,7 @@
+CGOProf Analysis Report
+=======================
+
+Call sites: 43
+Findings: 0
+
+No rule fired for the loaded profile.

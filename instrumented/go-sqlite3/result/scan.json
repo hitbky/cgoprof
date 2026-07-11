@@ -1,0 +1,1920 @@
+{
+  "callsites": [
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"d0ebf15a5a\", \"CString\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 32,
+      "site_id": "d0ebf15a5a"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"8be59766bd\", \"free\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 38,
+      "site_id": "8be59766bd"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_4 := prof.BeginCall(\"d750070a4c\", \"CString\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 44,
+      "site_id": "d750070a4c"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_6 := prof.BeginCall(\"50e16a72b7\", \"free\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 50,
+      "site_id": "50e16a72b7"
+    },
+    {
+      "c_symbol": "sqlite3_backup_step",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"3f3d25bbbd\", \"sqlite3_backup_step\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 68,
+      "site_id": "3f3d25bbbd"
+    },
+    {
+      "c_symbol": "sqlite3_backup_remaining",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"883353b5f5\", \"sqlite3_backup_remaining\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 82,
+      "site_id": "883353b5f5"
+    },
+    {
+      "c_symbol": "sqlite3_backup_pagecount",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"bf7b3454e9\", \"sqlite3_backup_pagecount\")",
+      "file": "backup.go",
+      "function": "<package>",
+      "line": 91,
+      "site_id": "bf7b3454e9"
+    },
+    {
+      "c_symbol": "sqlite3_user_data",
+      "expression": "fi := lookupHandle(C.sqlite3_user_data(ctx)).(*functionInfo)",
+      "file": "callback.go",
+      "function": "callbackTrampoline",
+      "line": 45,
+      "site_id": "b9dcae5619"
+    },
+    {
+      "c_symbol": "sqlite3_user_data",
+      "expression": "ai := lookupHandle(C.sqlite3_user_data(ctx)).(*aggInfo)",
+      "file": "callback.go",
+      "function": "stepTrampoline",
+      "line": 56,
+      "site_id": "d27bb59ad0"
+    },
+    {
+      "c_symbol": "sqlite3_user_data",
+      "expression": "ai := lookupHandle(C.sqlite3_user_data(ctx)).(*aggInfo)",
+      "file": "callback.go",
+      "function": "doneTrampoline",
+      "line": 68,
+      "site_id": "3eea870995"
+    },
+    {
+      "c_symbol": "GoStringN",
+      "expression": "__cgoprof_ret_6 := C.GoStringN(a, la)",
+      "file": "callback.go",
+      "function": "compareTrampoline",
+      "line": 83,
+      "site_id": "efcb0a254e"
+    },
+    {
+      "c_symbol": "GoStringN",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"e1872f8f7c\", \"GoStringN\")",
+      "file": "callback.go",
+      "function": "compareTrampoline",
+      "line": 86,
+      "site_id": "e1872f8f7c"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "prof.BeginCall(\"4e5af08929\", \"GoString\")",
+      "file": "callback.go",
+      "function": "updateHookTrampoline",
+      "line": 126,
+      "site_id": "4e5af08929"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_14 := prof.BeginCall(\"ed1801fef5\", \"GoString\")",
+      "file": "callback.go",
+      "function": "updateHookTrampoline",
+      "line": 130,
+      "site_id": "ed1801fef5"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_19 := prof.BeginCall(\"1b32fe3ef7\", \"GoString\")",
+      "file": "callback.go",
+      "function": "authorizerTrampoline",
+      "line": 150,
+      "site_id": "1b32fe3ef7"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_21 := prof.BeginCall(\"bcf85c7418\", \"GoString\")",
+      "file": "callback.go",
+      "function": "authorizerTrampoline",
+      "line": 154,
+      "site_id": "bcf85c7418"
+    },
+    {
+      "c_symbol": "malloc",
+      "expression": "__cgoprof_end_24 := prof.BeginCall(\"65c8963533\", \"malloc\")",
+      "file": "callback.go",
+      "function": "newHandle",
+      "line": 192,
+      "site_id": "65c8963533"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_26 := prof.BeginCall(\"4824e3bc4e\", \"free\")",
+      "file": "callback.go",
+      "function": "deleteHandles",
+      "line": 223,
+      "site_id": "4824e3bc4e"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_27 := prof.BeginCall(\"62e18549c8\", \"sqlite3_value_type\")",
+      "file": "callback.go",
+      "function": "callbackArgInt64",
+      "line": 251,
+      "site_id": "62e18549c8"
+    },
+    {
+      "c_symbol": "sqlite3_value_int64",
+      "expression": "__cgoprof_end_29 := prof.BeginCall(\"41bdbe068a\", \"sqlite3_value_int64\")",
+      "file": "callback.go",
+      "function": "callbackArgInt64",
+      "line": 257,
+      "site_id": "41bdbe068a"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_31 := prof.BeginCall(\"ea70ccbada\", \"sqlite3_value_type\")",
+      "file": "callback.go",
+      "function": "callbackArgBool",
+      "line": 264,
+      "site_id": "ea70ccbada"
+    },
+    {
+      "c_symbol": "sqlite3_value_int64",
+      "expression": "__cgoprof_end_33 := prof.BeginCall(\"d6d583069c\", \"sqlite3_value_int64\")",
+      "file": "callback.go",
+      "function": "callbackArgBool",
+      "line": 270,
+      "site_id": "d6d583069c"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_35 := prof.BeginCall(\"cd7674b5b3\", \"sqlite3_value_type\")",
+      "file": "callback.go",
+      "function": "callbackArgFloat64",
+      "line": 282,
+      "site_id": "cd7674b5b3"
+    },
+    {
+      "c_symbol": "sqlite3_value_double",
+      "expression": "__cgoprof_end_37 := prof.BeginCall(\"f425b3a59c\", \"sqlite3_value_double\")",
+      "file": "callback.go",
+      "function": "callbackArgFloat64",
+      "line": 288,
+      "site_id": "f425b3a59c"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_51 := prof.BeginCall(\"f98b9a9344\", \"sqlite3_value_type\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 295,
+      "site_id": "f98b9a9344"
+    },
+    {
+      "c_symbol": "sqlite3_value_bytes",
+      "expression": "__cgoprof_end_39 := prof.BeginCall(\"a485ba87d7\", \"sqlite3_value_bytes\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 300,
+      "site_id": "a485ba87d7"
+    },
+    {
+      "c_symbol": "sqlite3_value_blob",
+      "expression": "__cgoprof_end_41 := prof.BeginCall(\"77ee12781a\", \"sqlite3_value_blob\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 304,
+      "site_id": "77ee12781a"
+    },
+    {
+      "c_symbol": "GoBytes",
+      "expression": "__cgoprof_end_43 := prof.BeginCall(\"a0cbe7ba7f\", \"GoBytes\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 309,
+      "site_id": "a0cbe7ba7f"
+    },
+    {
+      "c_symbol": "sqlite3_value_bytes",
+      "expression": "__cgoprof_end_45 := prof.BeginCall(\"6d7b40b812\", \"sqlite3_value_bytes\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 314,
+      "site_id": "6d7b40b812"
+    },
+    {
+      "c_symbol": "sqlite3_value_text",
+      "expression": "__cgoprof_end_47 := prof.BeginCall(\"c58d18e9e6\", \"sqlite3_value_text\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 318,
+      "site_id": "c58d18e9e6"
+    },
+    {
+      "c_symbol": "GoBytes",
+      "expression": "__cgoprof_end_49 := prof.BeginCall(\"27136d59d4\", \"GoBytes\")",
+      "file": "callback.go",
+      "function": "callbackArgBytes",
+      "line": 323,
+      "site_id": "27136d59d4"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_65 := prof.BeginCall(\"7d0bd66430\", \"sqlite3_value_type\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 333,
+      "site_id": "7d0bd66430"
+    },
+    {
+      "c_symbol": "sqlite3_value_blob",
+      "expression": "__cgoprof_end_53 := prof.BeginCall(\"a65de43531\", \"sqlite3_value_blob\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 338,
+      "site_id": "a65de43531"
+    },
+    {
+      "c_symbol": "sqlite3_value_bytes",
+      "expression": "__cgoprof_end_55 := prof.BeginCall(\"5460b93cde\", \"sqlite3_value_bytes\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 342,
+      "site_id": "5460b93cde"
+    },
+    {
+      "c_symbol": "GoStringN",
+      "expression": "__cgoprof_end_57 := prof.BeginCall(\"bd3a0cf817\", \"GoStringN\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 347,
+      "site_id": "bd3a0cf817"
+    },
+    {
+      "c_symbol": "sqlite3_value_text",
+      "expression": "__cgoprof_end_59 := prof.BeginCall(\"4a978d4d9d\", \"sqlite3_value_text\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 352,
+      "site_id": "4a978d4d9d"
+    },
+    {
+      "c_symbol": "sqlite3_value_bytes",
+      "expression": "__cgoprof_end_61 := prof.BeginCall(\"70ab3600f0\", \"sqlite3_value_bytes\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 356,
+      "site_id": "70ab3600f0"
+    },
+    {
+      "c_symbol": "GoStringN",
+      "expression": "__cgoprof_end_63 := prof.BeginCall(\"c2e7362245\", \"GoStringN\")",
+      "file": "callback.go",
+      "function": "callbackArgString",
+      "line": 361,
+      "site_id": "c2e7362245"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_67 := prof.BeginCall(\"08d4a0ce94\", \"sqlite3_value_type\")",
+      "file": "callback.go",
+      "function": "callbackArgGeneric",
+      "line": 371,
+      "site_id": "08d4a0ce94"
+    },
+    {
+      "c_symbol": "sqlite3_result_int64",
+      "expression": "__cgoprof_end_69 := prof.BeginCall(\"c278bb6cfb\", \"sqlite3_result_int64\")",
+      "file": "callback.go",
+      "function": "callbackRetInteger",
+      "line": 467,
+      "site_id": "c278bb6cfb"
+    },
+    {
+      "c_symbol": "sqlite3_result_double",
+      "expression": "__cgoprof_end_70 := prof.BeginCall(\"e2ad664641\", \"sqlite3_result_double\")",
+      "file": "callback.go",
+      "function": "callbackRetFloat",
+      "line": 482,
+      "site_id": "e2ad664641"
+    },
+    {
+      "c_symbol": "sqlite3_result_null",
+      "expression": "__cgoprof_end_71 := prof.BeginCall(\"e188b967c7\", \"sqlite3_result_null\")",
+      "file": "callback.go",
+      "function": "callbackRetBlob",
+      "line": 495,
+      "site_id": "e188b967c7"
+    },
+    {
+      "c_symbol": "sqlite3_result_error_toobig",
+      "expression": "__cgoprof_end_72 := prof.BeginCall(\"ceb7f9d6d4\", \"sqlite3_result_error_toobig\")",
+      "file": "callback.go",
+      "function": "callbackRetBlob",
+      "line": 501,
+      "site_id": "ceb7f9d6d4"
+    },
+    {
+      "c_symbol": "_sqlite3_result_blob",
+      "expression": "__cgoprof_end_73 := prof.BeginCall(\"fe2bb4b8bb\", \"_sqlite3_result_blob\")",
+      "file": "callback.go",
+      "function": "callbackRetBlob",
+      "line": 507,
+      "site_id": "fe2bb4b8bb"
+    },
+    {
+      "c_symbol": "sqlite3_result_error_toobig",
+      "expression": "__cgoprof_end_74 := prof.BeginCall(\"ecc6f6d481\", \"sqlite3_result_error_toobig\")",
+      "file": "callback.go",
+      "function": "callbackRetText",
+      "line": 520,
+      "site_id": "ecc6f6d481"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_75 := prof.BeginCall(\"d753b7d599\", \"CString\")",
+      "file": "callback.go",
+      "function": "callbackRetText",
+      "line": 527,
+      "site_id": "d753b7d599"
+    },
+    {
+      "c_symbol": "_sqlite3_result_text",
+      "expression": "__cgoprof_end_77 := prof.BeginCall(\"02d89bc315\", \"_sqlite3_result_text\")",
+      "file": "callback.go",
+      "function": "callbackRetText",
+      "line": 531,
+      "site_id": "02d89bc315"
+    },
+    {
+      "c_symbol": "sqlite3_result_null",
+      "expression": "__cgoprof_end_78 := prof.BeginCall(\"5ec1e2df7a\", \"sqlite3_result_null\")",
+      "file": "callback.go",
+      "function": "callbackRetGeneric",
+      "line": 543,
+      "site_id": "5ec1e2df7a"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_79 := prof.BeginCall(\"be993e1b67\", \"CString\")",
+      "file": "callback.go",
+      "function": "callbackError",
+      "line": 589,
+      "site_id": "be993e1b67"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_81 := prof.BeginCall(\"cb4e16b4cd\", \"free\")",
+      "file": "callback.go",
+      "function": "callbackError",
+      "line": 595,
+      "site_id": "cb4e16b4cd"
+    },
+    {
+      "c_symbol": "sqlite3_errstr",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"d840065f5b\", \"sqlite3_errstr\")",
+      "file": "error.go",
+      "function": "<package>",
+      "line": 91,
+      "site_id": "d840065f5b"
+    },
+    {
+      "c_symbol": "sqlite3_libversion",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"e82150d004\", \"sqlite3_libversion\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 345,
+      "site_id": "e82150d004"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"f4d3e8216f\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 349,
+      "site_id": "f4d3e8216f"
+    },
+    {
+      "c_symbol": "sqlite3_libversion_number",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"d30aedf292\", \"sqlite3_libversion_number\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 353,
+      "site_id": "d30aedf292"
+    },
+    {
+      "c_symbol": "sqlite3_sourceid",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"9eebc808a9\", \"sqlite3_sourceid\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 357,
+      "site_id": "9eebc808a9"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"59e3817652\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 364,
+      "site_id": "59e3817652"
+    },
+    {
+      "c_symbol": "sqlite3_aggregate_context",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"6f45cd7d28\", \"sqlite3_aggregate_context\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 563,
+      "site_id": "6f45cd7d28"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_13 := prof.BeginCall(\"12a8775603\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 659,
+      "site_id": "12a8775603"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_15 := prof.BeginCall(\"69fe122172\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 665,
+      "site_id": "69fe122172"
+    },
+    {
+      "c_symbol": "sqlite3_create_collation",
+      "expression": "__cgoprof_end_16 := prof.BeginCall(\"43840c7d58\", \"sqlite3_create_collation\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 669,
+      "site_id": "43840c7d58"
+    },
+    {
+      "c_symbol": "sqlite3_commit_hook",
+      "expression": "__cgoprof_end_18 := prof.BeginCall(\"767a8e98a2\", \"sqlite3_commit_hook\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 688,
+      "site_id": "767a8e98a2"
+    },
+    {
+      "c_symbol": "sqlite3_commit_hook",
+      "expression": "__cgoprof_end_19 := prof.BeginCall(\"97a3395abb\", \"sqlite3_commit_hook\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 692,
+      "site_id": "97a3395abb"
+    },
+    {
+      "c_symbol": "sqlite3_rollback_hook",
+      "expression": "__cgoprof_end_20 := prof.BeginCall(\"5ed52088b6\", \"sqlite3_rollback_hook\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 707,
+      "site_id": "5ed52088b6"
+    },
+    {
+      "c_symbol": "sqlite3_rollback_hook",
+      "expression": "__cgoprof_end_21 := prof.BeginCall(\"6132508de0\", \"sqlite3_rollback_hook\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 711,
+      "site_id": "6132508de0"
+    },
+    {
+      "c_symbol": "sqlite3_update_hook",
+      "expression": "__cgoprof_end_22 := prof.BeginCall(\"bbbfceb8f1\", \"sqlite3_update_hook\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 730,
+      "site_id": "bbbfceb8f1"
+    },
+    {
+      "c_symbol": "sqlite3_update_hook",
+      "expression": "__cgoprof_end_23 := prof.BeginCall(\"a52fb4da53\", \"sqlite3_update_hook\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 734,
+      "site_id": "a52fb4da53"
+    },
+    {
+      "c_symbol": "sqlite3_set_authorizer",
+      "expression": "__cgoprof_end_24 := prof.BeginCall(\"7a92df24fb\", \"sqlite3_set_authorizer\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 750,
+      "site_id": "7a92df24fb"
+    },
+    {
+      "c_symbol": "sqlite3_set_authorizer",
+      "expression": "__cgoprof_end_25 := prof.BeginCall(\"4ed5612d28\", \"sqlite3_set_authorizer\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 754,
+      "site_id": "4ed5612d28"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_26 := prof.BeginCall(\"2367198b76\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 826,
+      "site_id": "2367198b76"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_28 := prof.BeginCall(\"f600541940\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "Version",
+      "line": 832,
+      "site_id": "f600541940"
+    },
+    {
+      "c_symbol": "_sqlite3_create_function",
+      "expression": "__cgoprof_end_29 := prof.BeginCall(\"3d98770d67\", \"_sqlite3_create_function\")",
+      "file": "sqlite3.go",
+      "function": "sqlite3CreateFunction",
+      "line": 848,
+      "site_id": "3d98770d67"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_31 := prof.BeginCall(\"d0bf12eb7a\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "sqlite3CreateFunction",
+      "line": 969,
+      "site_id": "d0bf12eb7a"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_33 := prof.BeginCall(\"4f4ae1ecb9\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "sqlite3CreateFunction",
+      "line": 975,
+      "site_id": "4f4ae1ecb9"
+    },
+    {
+      "c_symbol": "sqlite3_get_autocommit",
+      "expression": "__cgoprof_end_34 := prof.BeginCall(\"b4be34aac7\", \"sqlite3_get_autocommit\")",
+      "file": "sqlite3.go",
+      "function": "sqlite3CreateFunction",
+      "line": 994,
+      "site_id": "b4be34aac7"
+    },
+    {
+      "c_symbol": "sqlite3_errmsg",
+      "expression": "__cgoprof_end_40 := prof.BeginCall(\"f8acff463e\", \"sqlite3_errmsg\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1021,
+      "site_id": "f8acff463e"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_42 := prof.BeginCall(\"5f730d4034\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1031,
+      "site_id": "5f730d4034"
+    },
+    {
+      "c_symbol": "sqlite3_system_errno",
+      "expression": "__cgoprof_end_44 := prof.BeginCall(\"ce23c852a6\", \"sqlite3_system_errno\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1038,
+      "site_id": "ce23c852a6"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_46 := prof.BeginCall(\"625f108886\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1105,
+      "site_id": "625f108886"
+    },
+    {
+      "c_symbol": "_sqlite3_exec_no_args",
+      "expression": "__cgoprof_end_48 := prof.BeginCall(\"ed242be7f6\", \"_sqlite3_exec_no_args\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1110,
+      "site_id": "ed242be7f6"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_50 := prof.BeginCall(\"57fabcd2a1\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1116,
+      "site_id": "57fabcd2a1"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_52 := prof.BeginCall(\"6c3b16d491\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1124,
+      "site_id": "6c3b16d491"
+    },
+    {
+      "c_symbol": "sqlite3_threadsafe",
+      "expression": "__cgoprof_end_53 := prof.BeginCall(\"96c3c576e9\", \"sqlite3_threadsafe\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1302,
+      "site_id": "96c3c576e9"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_55 := prof.BeginCall(\"765d6f349a\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1699,
+      "site_id": "765d6f349a"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_57 := prof.BeginCall(\"e4a7e0dd10\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1705,
+      "site_id": "e4a7e0dd10"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_58 := prof.BeginCall(\"fa367617cf\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1713,
+      "site_id": "fa367617cf"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_60 := prof.BeginCall(\"d0235b1ea9\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1719,
+      "site_id": "d0235b1ea9"
+    },
+    {
+      "c_symbol": "_sqlite3_open_v2",
+      "expression": "__cgoprof_end_61 := prof.BeginCall(\"9931e9a822\", \"_sqlite3_open_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1725,
+      "site_id": "9931e9a822"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_63 := prof.BeginCall(\"e52eb13e42\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1737,
+      "site_id": "e52eb13e42"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_64 := prof.BeginCall(\"91de20edb0\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1759,
+      "site_id": "91de20edb0"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_65 := prof.BeginCall(\"e96703b8f9\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1914,
+      "site_id": "e96703b8f9"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_66 := prof.BeginCall(\"d3ad9cda83\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1945,
+      "site_id": "d3ad9cda83"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_67 := prof.BeginCall(\"e3b2006919\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1955,
+      "site_id": "e3b2006919"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_68 := prof.BeginCall(\"db1df2c990\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1965,
+      "site_id": "db1df2c990"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_69 := prof.BeginCall(\"55f01100a8\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1975,
+      "site_id": "55f01100a8"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_70 := prof.BeginCall(\"c6a10b36eb\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1985,
+      "site_id": "c6a10b36eb"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_71 := prof.BeginCall(\"41a13b6cd7\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 1996,
+      "site_id": "41a13b6cd7"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_72 := prof.BeginCall(\"dabbe0b5b1\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2005,
+      "site_id": "dabbe0b5b1"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_73 := prof.BeginCall(\"531950d2a5\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2015,
+      "site_id": "531950d2a5"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_74 := prof.BeginCall(\"fb16c05b54\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2029,
+      "site_id": "fb16c05b54"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_75 := prof.BeginCall(\"70c8cb616f\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2047,
+      "site_id": "70c8cb616f"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_76 := prof.BeginCall(\"922ce388fa\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2057,
+      "site_id": "922ce388fa"
+    },
+    {
+      "c_symbol": "sqlite3_close_v2",
+      "expression": "__cgoprof_end_77 := prof.BeginCall(\"01e1c8dc50\", \"sqlite3_close_v2\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2090,
+      "site_id": "01e1c8dc50"
+    },
+    {
+      "c_symbol": "_sqlite3_reset_clear",
+      "expression": "__cgoprof_end_79 := prof.BeginCall(\"9b26957d3b\", \"_sqlite3_reset_clear\")",
+      "file": "sqlite3.go",
+      "function": "lastError",
+      "line": 2154,
+      "site_id": "9b26957d3b"
+    },
+    {
+      "c_symbol": "sqlite3_finalize",
+      "expression": "__cgoprof_end_81 := prof.BeginCall(\"e94ce7b3d5\", \"sqlite3_finalize\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2189,
+      "site_id": "e94ce7b3d5"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_82 := prof.BeginCall(\"18a9fe4558\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2206,
+      "site_id": "18a9fe4558"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_84 := prof.BeginCall(\"d59d77ce6f\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2212,
+      "site_id": "d59d77ce6f"
+    },
+    {
+      "c_symbol": "_sqlite3_prepare_v2_internal",
+      "expression": "__cgoprof_end_85 := prof.BeginCall(\"fd8e87bea7\", \"_sqlite3_prepare_v2_internal\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2219,
+      "site_id": "fd8e87bea7"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_87 := prof.BeginCall(\"48388421f8\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2229,
+      "site_id": "48388421f8"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_89 := prof.BeginCall(\"8fed3ae97c\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2285,
+      "site_id": "8fed3ae97c"
+    },
+    {
+      "c_symbol": "sqlite3_db_filename",
+      "expression": "__cgoprof_end_91 := prof.BeginCall(\"4b1e2bd6f3\", \"sqlite3_db_filename\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2288,
+      "site_id": "4b1e2bd6f3"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_93 := prof.BeginCall(\"8f973740cd\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2292,
+      "site_id": "8f973740cd"
+    },
+    {
+      "c_symbol": "_sqlite3_limit",
+      "expression": "__cgoprof_end_95 := prof.BeginCall(\"a748316330\", \"_sqlite3_limit\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2299,
+      "site_id": "a748316330"
+    },
+    {
+      "c_symbol": "_sqlite3_limit",
+      "expression": "__cgoprof_end_97 := prof.BeginCall(\"04bfce04d0\", \"_sqlite3_limit\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2310,
+      "site_id": "04bfce04d0"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_99 := prof.BeginCall(\"65b6910b1b\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2336,
+      "site_id": "65b6910b1b"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_101 := prof.BeginCall(\"be7f320512\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2342,
+      "site_id": "be7f320512"
+    },
+    {
+      "c_symbol": "sqlite3_file_control",
+      "expression": "__cgoprof_end_102 := prof.BeginCall(\"a1b5fab348\", \"sqlite3_file_control\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2349,
+      "site_id": "a1b5fab348"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_104 := prof.BeginCall(\"f6c9b90812\", \"CString\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2377,
+      "site_id": "f6c9b90812"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_106 := prof.BeginCall(\"5874676662\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2383,
+      "site_id": "5874676662"
+    },
+    {
+      "c_symbol": "sqlite3_file_control",
+      "expression": "__cgoprof_end_107 := prof.BeginCall(\"7129e96ead\", \"sqlite3_file_control\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2390,
+      "site_id": "7129e96ead"
+    },
+    {
+      "c_symbol": "sqlite3_finalize",
+      "expression": "__cgoprof_end_109 := prof.BeginCall(\"a588f9646e\", \"sqlite3_finalize\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2423,
+      "site_id": "a588f9646e"
+    },
+    {
+      "c_symbol": "sqlite3_bind_parameter_count",
+      "expression": "__cgoprof_end_111 := prof.BeginCall(\"8b3d601ccd\", \"sqlite3_bind_parameter_count\")",
+      "file": "sqlite3.go",
+      "function": "finalizeCachedStmt",
+      "line": 2435,
+      "site_id": "8b3d601ccd"
+    },
+    {
+      "c_symbol": "_sqlite3_bind_text",
+      "expression": "__cgoprof_end_113 := prof.BeginCall(\"f59d12d5a2\", \"_sqlite3_bind_text\")",
+      "file": "sqlite3.go",
+      "function": "bindText",
+      "line": 2446,
+      "site_id": "f59d12d5a2"
+    },
+    {
+      "c_symbol": "_sqlite3_bind_text",
+      "expression": "__cgoprof_end_115 := prof.BeginCall(\"0fff59e08a\", \"_sqlite3_bind_text\")",
+      "file": "sqlite3.go",
+      "function": "bindText",
+      "line": 2451,
+      "site_id": "0fff59e08a"
+    },
+    {
+      "c_symbol": "sqlite3_bind_null",
+      "expression": "__cgoprof_end_117 := prof.BeginCall(\"d14811ede2\", \"sqlite3_bind_null\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2460,
+      "site_id": "d14811ede2"
+    },
+    {
+      "c_symbol": "sqlite3_bind_int64",
+      "expression": "__cgoprof_end_119 := prof.BeginCall(\"24af8d6f0b\", \"sqlite3_bind_int64\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2467,
+      "site_id": "24af8d6f0b"
+    },
+    {
+      "c_symbol": "sqlite3_bind_int",
+      "expression": "__cgoprof_end_121 := prof.BeginCall(\"bbb75a6394\", \"sqlite3_bind_int\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2473,
+      "site_id": "bbb75a6394"
+    },
+    {
+      "c_symbol": "sqlite3_bind_int",
+      "expression": "__cgoprof_end_123 := prof.BeginCall(\"c44e2d94ef\", \"sqlite3_bind_int\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2478,
+      "site_id": "c44e2d94ef"
+    },
+    {
+      "c_symbol": "sqlite3_bind_double",
+      "expression": "__cgoprof_end_125 := prof.BeginCall(\"7598ecfa83\", \"sqlite3_bind_double\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2483,
+      "site_id": "7598ecfa83"
+    },
+    {
+      "c_symbol": "sqlite3_bind_null",
+      "expression": "__cgoprof_end_127 := prof.BeginCall(\"b095a879d5\", \"sqlite3_bind_null\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2489,
+      "site_id": "b095a879d5"
+    },
+    {
+      "c_symbol": "_sqlite3_bind_blob",
+      "expression": "__cgoprof_end_129 := prof.BeginCall(\"072afb9de7\", \"_sqlite3_bind_blob\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2499,
+      "site_id": "072afb9de7"
+    },
+    {
+      "c_symbol": "_sqlite3_bind_text",
+      "expression": "__cgoprof_end_131 := prof.BeginCall(\"f07d6b4bfe\", \"_sqlite3_bind_text\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2508,
+      "site_id": "f07d6b4bfe"
+    },
+    {
+      "c_symbol": "_sqlite3_bind_text",
+      "expression": "__cgoprof_end_133 := prof.BeginCall(\"305f1e47bd\", \"_sqlite3_bind_text\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2514,
+      "site_id": "305f1e47bd"
+    },
+    {
+      "c_symbol": "sqlite3_bind_parameter_index",
+      "expression": "__cgoprof_end_135 := prof.BeginCall(\"c3c2b2e1b0\", \"sqlite3_bind_parameter_index\")",
+      "file": "sqlite3.go",
+      "function": "bindValue",
+      "line": 2540,
+      "site_id": "c3c2b2e1b0"
+    },
+    {
+      "c_symbol": "_sqlite3_reset_clear",
+      "expression": "__cgoprof_end_137 := prof.BeginCall(\"212c04db36\", \"_sqlite3_reset_clear\")",
+      "file": "sqlite3.go",
+      "function": "stmtArgs",
+      "line": 2580,
+      "site_id": "212c04db36"
+    },
+    {
+      "c_symbol": "malloc",
+      "expression": "__cgoprof_end_139 := prof.BeginCall(\"da24077fea\", \"malloc\")",
+      "file": "sqlite3.go",
+      "function": "stmtArgs",
+      "line": 2650,
+      "site_id": "da24077fea"
+    },
+    {
+      "c_symbol": "sqlite3_interrupt",
+      "expression": "prof.BeginCall(\"f6d288b9bf\", \"sqlite3_interrupt\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2719,
+      "site_id": "f6d288b9bf"
+    },
+    {
+      "c_symbol": "_sqlite3_reset_clear",
+      "expression": "__cgoprof_end_142 := prof.BeginCall(\"274dd608a9\", \"_sqlite3_reset_clear\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2736,
+      "site_id": "274dd608a9"
+    },
+    {
+      "c_symbol": "_sqlite3_step_row_internal",
+      "expression": "__cgoprof_end_143 := prof.BeginCall(\"3995321bec\", \"_sqlite3_step_row_internal\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2744,
+      "site_id": "3995321bec"
+    },
+    {
+      "c_symbol": "_sqlite3_reset_clear",
+      "expression": "__cgoprof_end_145 := prof.BeginCall(\"22312848ed\", \"_sqlite3_reset_clear\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2750,
+      "site_id": "22312848ed"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_148 := prof.BeginCall(\"b2bf224a25\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2779,
+      "site_id": "b2bf224a25"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_149 := prof.BeginCall(\"778b508ad6\", \"free\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2789,
+      "site_id": "778b508ad6"
+    },
+    {
+      "c_symbol": "sqlite3_reset",
+      "expression": "__cgoprof_end_150 := prof.BeginCall(\"aa2388e85a\", \"sqlite3_reset\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2803,
+      "site_id": "aa2388e85a"
+    },
+    {
+      "c_symbol": "sqlite3_column_name",
+      "expression": "__cgoprof_end_152 := prof.BeginCall(\"25cc82ac3b\", \"sqlite3_column_name\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2825,
+      "site_id": "25cc82ac3b"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_154 := prof.BeginCall(\"1fb70eb066\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2829,
+      "site_id": "1fb70eb066"
+    },
+    {
+      "c_symbol": "sqlite3_column_decltype",
+      "expression": "__cgoprof_end_156 := prof.BeginCall(\"7c53d39812\", \"sqlite3_column_decltype\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2842,
+      "site_id": "7c53d39812"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_158 := prof.BeginCall(\"3db7b9fed5\", \"GoString\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2849,
+      "site_id": "3db7b9fed5"
+    },
+    {
+      "c_symbol": "sqlite3_interrupt",
+      "expression": "prof.BeginCall(\"d828f83e98\", \"sqlite3_interrupt\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2897,
+      "site_id": "d828f83e98"
+    },
+    {
+      "c_symbol": "_sqlite3_step_internal",
+      "expression": "__cgoprof_end_161 := prof.BeginCall(\"7f9abaef1c\", \"_sqlite3_step_internal\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2911,
+      "site_id": "7f9abaef1c"
+    },
+    {
+      "c_symbol": "sqlite3_reset",
+      "expression": "__cgoprof_end_163 := prof.BeginCall(\"4e0a35db7a\", \"sqlite3_reset\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2919,
+      "site_id": "4e0a35db7a"
+    },
+    {
+      "c_symbol": "_sqlite3_column_values",
+      "expression": "__cgoprof_end_165 := prof.BeginCall(\"b0d22a4c6f\", \"_sqlite3_column_values\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2933,
+      "site_id": "b0d22a4c6f"
+    },
+    {
+      "c_symbol": "GoBytes",
+      "expression": "__cgoprof_end_166 := prof.BeginCall(\"000169ff41\", \"GoBytes\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2976,
+      "site_id": "000169ff41"
+    },
+    {
+      "c_symbol": "GoStringN",
+      "expression": "__cgoprof_end_168 := prof.BeginCall(\"1425daf1e7\", \"GoStringN\")",
+      "file": "sqlite3.go",
+      "function": "isInterruptErr",
+      "line": 2989,
+      "site_id": "1425daf1e7"
+    },
+    {
+      "c_symbol": "sqlite3_result_error_toobig",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"d5f9d85f43\", \"sqlite3_result_error_toobig\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 53,
+      "site_id": "d5f9d85f43"
+    },
+    {
+      "c_symbol": "my_result_blob",
+      "expression": "__cgoprof_end_2 := prof.BeginCall(\"0d9c547925\", \"my_result_blob\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 63,
+      "site_id": "0d9c547925"
+    },
+    {
+      "c_symbol": "sqlite3_result_double",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"6ab1832fa2\", \"sqlite3_result_double\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 73,
+      "site_id": "6ab1832fa2"
+    },
+    {
+      "c_symbol": "sqlite3_result_int64",
+      "expression": "__cgoprof_end_4 := prof.BeginCall(\"74fe8df8c0\", \"sqlite3_result_int64\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 84,
+      "site_id": "74fe8df8c0"
+    },
+    {
+      "c_symbol": "sqlite3_result_int",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"60bcb722e4\", \"sqlite3_result_int\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 88,
+      "site_id": "60bcb722e4"
+    },
+    {
+      "c_symbol": "sqlite3_result_int64",
+      "expression": "__cgoprof_end_6 := prof.BeginCall(\"88e205450f\", \"sqlite3_result_int64\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 99,
+      "site_id": "88e205450f"
+    },
+    {
+      "c_symbol": "sqlite3_result_null",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"c894cbcae7\", \"sqlite3_result_null\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 109,
+      "site_id": "c894cbcae7"
+    },
+    {
+      "c_symbol": "sqlite3_result_error_toobig",
+      "expression": "__cgoprof_end_8 := prof.BeginCall(\"f13db44862\", \"sqlite3_result_error_toobig\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 120,
+      "site_id": "f13db44862"
+    },
+    {
+      "c_symbol": "my_result_text",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"40ec7b51eb\", \"my_result_text\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 127,
+      "site_id": "40ec7b51eb"
+    },
+    {
+      "c_symbol": "my_result_text",
+      "expression": "__cgoprof_end_10 := prof.BeginCall(\"6fce142435\", \"my_result_text\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 132,
+      "site_id": "6fce142435"
+    },
+    {
+      "c_symbol": "sqlite3_result_zeroblob",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"abc722a30a\", \"sqlite3_result_zeroblob\")",
+      "file": "sqlite3_context.go",
+      "function": "<package>",
+      "line": 142,
+      "site_id": "abc722a30a"
+    },
+    {
+      "c_symbol": "sqlite3_enable_load_extension",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"1bfacbce85\", \"sqlite3_enable_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 27,
+      "site_id": "1bfacbce85"
+    },
+    {
+      "c_symbol": "sqlite3_errmsg",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"24fdcdbeb9\", \"sqlite3_errmsg\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 32,
+      "site_id": "24fdcdbeb9"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"cb72198fe2\", \"GoString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 36,
+      "site_id": "cb72198fe2"
+    },
+    {
+      "c_symbol": "sqlite3_enable_load_extension",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"d8fdaed3bd\", \"sqlite3_enable_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 44,
+      "site_id": "d8fdaed3bd"
+    },
+    {
+      "c_symbol": "sqlite3_enable_load_extension",
+      "expression": "__cgoprof_end_8 := prof.BeginCall(\"e12e5a8a91\", \"sqlite3_enable_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 50,
+      "site_id": "e12e5a8a91"
+    },
+    {
+      "c_symbol": "sqlite3_errmsg",
+      "expression": "__cgoprof_end_10 := prof.BeginCall(\"c167e2281d\", \"sqlite3_errmsg\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 55,
+      "site_id": "c167e2281d"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_12 := prof.BeginCall(\"142de87e1e\", \"GoString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 62,
+      "site_id": "142de87e1e"
+    },
+    {
+      "c_symbol": "sqlite3_enable_load_extension",
+      "expression": "__cgoprof_end_14 := prof.BeginCall(\"435a1384bb\", \"sqlite3_enable_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 72,
+      "site_id": "435a1384bb"
+    },
+    {
+      "c_symbol": "sqlite3_errmsg",
+      "expression": "__cgoprof_end_16 := prof.BeginCall(\"bdfdb16ef7\", \"sqlite3_errmsg\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 77,
+      "site_id": "bdfdb16ef7"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_18 := prof.BeginCall(\"480b5dbefe\", \"GoString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 81,
+      "site_id": "480b5dbefe"
+    },
+    {
+      "c_symbol": "sqlite3_enable_load_extension",
+      "expression": "__cgoprof_end_20 := prof.BeginCall(\"61792d2e8a\", \"sqlite3_enable_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 88,
+      "site_id": "61792d2e8a"
+    },
+    {
+      "c_symbol": "sqlite3_enable_load_extension",
+      "expression": "__cgoprof_end_21 := prof.BeginCall(\"40f24b1588\", \"sqlite3_enable_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 93,
+      "site_id": "40f24b1588"
+    },
+    {
+      "c_symbol": "sqlite3_errmsg",
+      "expression": "__cgoprof_end_23 := prof.BeginCall(\"5e7e5d09e0\", \"sqlite3_errmsg\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 98,
+      "site_id": "5e7e5d09e0"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_25 := prof.BeginCall(\"f18c922ae2\", \"GoString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 102,
+      "site_id": "f18c922ae2"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_27 := prof.BeginCall(\"fcd50a0269\", \"CString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 114,
+      "site_id": "fcd50a0269"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_29 := prof.BeginCall(\"daa1b8be76\", \"free\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 120,
+      "site_id": "daa1b8be76"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_30 := prof.BeginCall(\"43e9bb6ebc\", \"CString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 129,
+      "site_id": "43e9bb6ebc"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_32 := prof.BeginCall(\"9df98a8939\", \"free\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 135,
+      "site_id": "9df98a8939"
+    },
+    {
+      "c_symbol": "sqlite3_free",
+      "expression": "__cgoprof_end_33 := prof.BeginCall(\"dfc28bb4fb\", \"sqlite3_free\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 143,
+      "site_id": "dfc28bb4fb"
+    },
+    {
+      "c_symbol": "sqlite3_load_extension",
+      "expression": "__cgoprof_end_34 := prof.BeginCall(\"420020a4a1\", \"sqlite3_load_extension\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 148,
+      "site_id": "420020a4a1"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_36 := prof.BeginCall(\"8ba0674b69\", \"GoString\")",
+      "file": "sqlite3_load_extension.go",
+      "function": "<package>",
+      "line": 154,
+      "site_id": "8ba0674b69"
+    },
+    {
+      "c_symbol": "sqlite3_column_table_name",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"7f2712453a\", \"sqlite3_column_table_name\")",
+      "file": "sqlite3_opt_column_metadata.go",
+      "function": "<package>",
+      "line": 24,
+      "site_id": "7f2712453a"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"be1ebd3f90\", \"GoString\")",
+      "file": "sqlite3_opt_column_metadata.go",
+      "function": "<package>",
+      "line": 28,
+      "site_id": "be1ebd3f90"
+    },
+    {
+      "c_symbol": "sqlite3_preupdate_hook",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"df7ef5a27f\", \"sqlite3_preupdate_hook\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 43,
+      "site_id": "df7ef5a27f"
+    },
+    {
+      "c_symbol": "sqlite3_preupdate_hook",
+      "expression": "__cgoprof_end_2 := prof.BeginCall(\"d1656d1ae0\", \"sqlite3_preupdate_hook\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 47,
+      "site_id": "d1656d1ae0"
+    },
+    {
+      "c_symbol": "sqlite3_preupdate_depth",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"4090bd71ad\", \"sqlite3_preupdate_depth\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 57,
+      "site_id": "4090bd71ad"
+    },
+    {
+      "c_symbol": "sqlite3_preupdate_count",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"c87395c66b\", \"sqlite3_preupdate_count\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 66,
+      "site_id": "c87395c66b"
+    },
+    {
+      "c_symbol": "sqlite3_preupdate_new",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"f4a92d6e6e\", \"sqlite3_preupdate_new\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 81,
+      "site_id": "f4a92d6e6e"
+    },
+    {
+      "c_symbol": "sqlite3_preupdate_old",
+      "expression": "__cgoprof_end_8 := prof.BeginCall(\"ef89ed2ea2\", \"sqlite3_preupdate_old\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 86,
+      "site_id": "ef89ed2ea2"
+    },
+    {
+      "c_symbol": "sqlite3_value_type",
+      "expression": "__cgoprof_end_25 := prof.BeginCall(\"f74adf08d9\", \"sqlite3_value_type\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 90,
+      "site_id": "f74adf08d9"
+    },
+    {
+      "c_symbol": "sqlite3_value_int64",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"47a089267f\", \"sqlite3_value_int64\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 95,
+      "site_id": "47a089267f"
+    },
+    {
+      "c_symbol": "sqlite3_value_double",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"5ef6e2b842\", \"sqlite3_value_double\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 100,
+      "site_id": "5ef6e2b842"
+    },
+    {
+      "c_symbol": "sqlite3_value_bytes",
+      "expression": "__cgoprof_end_13 := prof.BeginCall(\"4015bc9457\", \"sqlite3_value_bytes\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 105,
+      "site_id": "4015bc9457"
+    },
+    {
+      "c_symbol": "sqlite3_value_blob",
+      "expression": "__cgoprof_end_15 := prof.BeginCall(\"6c50f9ee83\", \"sqlite3_value_blob\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 109,
+      "site_id": "6c50f9ee83"
+    },
+    {
+      "c_symbol": "GoBytes",
+      "expression": "__cgoprof_end_17 := prof.BeginCall(\"f33e9200f3\", \"GoBytes\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 114,
+      "site_id": "f33e9200f3"
+    },
+    {
+      "c_symbol": "sqlite3_value_bytes",
+      "expression": "__cgoprof_end_19 := prof.BeginCall(\"8ff4cb9d81\", \"sqlite3_value_bytes\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 119,
+      "site_id": "8ff4cb9d81"
+    },
+    {
+      "c_symbol": "sqlite3_value_text",
+      "expression": "__cgoprof_end_21 := prof.BeginCall(\"8fe1dd1dc9\", \"sqlite3_value_text\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 123,
+      "site_id": "8fe1dd1dc9"
+    },
+    {
+      "c_symbol": "GoBytes",
+      "expression": "__cgoprof_end_23 := prof.BeginCall(\"06a24be397\", \"GoBytes\")",
+      "file": "sqlite3_opt_preupdate_hook.go",
+      "function": "<package>",
+      "line": 128,
+      "site_id": "06a24be397"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"6af4cd2ade\", \"CString\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 34,
+      "site_id": "6af4cd2ade"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"8b5f307e91\", \"free\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 40,
+      "site_id": "8b5f307e91"
+    },
+    {
+      "c_symbol": "sqlite3_serialize",
+      "expression": "__cgoprof_end_4 := prof.BeginCall(\"be97803eec\", \"sqlite3_serialize\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 47,
+      "site_id": "be97803eec"
+    },
+    {
+      "c_symbol": "sqlite3_free",
+      "expression": "__cgoprof_end_6 := prof.BeginCall(\"90ca1550e7\", \"sqlite3_free\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 55,
+      "site_id": "90ca1550e7"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"922428fab5\", \"CString\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 80,
+      "site_id": "922428fab5"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"15e1aa53f5\", \"free\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 86,
+      "site_id": "15e1aa53f5"
+    },
+    {
+      "c_symbol": "sqlite3_malloc64",
+      "expression": "__cgoprof_end_10 := prof.BeginCall(\"a94ed6cdc2\", \"sqlite3_malloc64\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 90,
+      "site_id": "a94ed6cdc2"
+    },
+    {
+      "c_symbol": "sqlite3_deserialize",
+      "expression": "__cgoprof_end_12 := prof.BeginCall(\"6437d168ef\", \"sqlite3_deserialize\")",
+      "file": "sqlite3_opt_serialize.go",
+      "function": "<package>",
+      "line": 95,
+      "site_id": "6437d168ef"
+    },
+    {
+      "c_symbol": "malloc",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"f9c198aa22\", \"malloc\")",
+      "file": "sqlite3_opt_unlock_notify.go",
+      "function": "unlock_notify_wait",
+      "line": 97,
+      "site_id": "f9c198aa22"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"d94420c47e\", \"free\")",
+      "file": "sqlite3_opt_unlock_notify.go",
+      "function": "unlock_notify_wait",
+      "line": 103,
+      "site_id": "d94420c47e"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"27348574ff\", \"CString\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "mPrintf",
+      "line": 383,
+      "site_id": "27348574ff"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"9d7c24555a\", \"free\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "mPrintf",
+      "line": 389,
+      "site_id": "9d7c24555a"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_4 := prof.BeginCall(\"3cd61b871e\", \"CString\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "mPrintf",
+      "line": 395,
+      "site_id": "3cd61b871e"
+    },
+    {
+      "c_symbol": "_sqlite3_mprintf",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"eab007f89a\", \"_sqlite3_mprintf\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "mPrintf",
+      "line": 407,
+      "site_id": "eab007f89a"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_10 := prof.BeginCall(\"8f653941ea\", \"GoString\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goMInit",
+      "line": 427,
+      "site_id": "8f653941ea"
+    },
+    {
+      "c_symbol": "sqlite3_malloc",
+      "expression": "__cgoprof_end_15 := prof.BeginCall(\"1c183c5fcc\", \"sqlite3_malloc\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVBestIndex",
+      "line": 515,
+      "site_id": "1c183c5fcc"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_20 := prof.BeginCall(\"6262641174\", \"GoString\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVFilter",
+      "line": 581,
+      "site_id": "6262641174"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_27 := prof.BeginCall(\"aa3a61646d\", \"CString\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 770,
+      "site_id": "aa3a61646d"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_29 := prof.BeginCall(\"d1c09ea67e\", \"free\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 776,
+      "site_id": "d1c09ea67e"
+    },
+    {
+      "c_symbol": "sqlite3_declare_vtab",
+      "expression": "__cgoprof_end_30 := prof.BeginCall(\"bf36403443\", \"sqlite3_declare_vtab\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 780,
+      "site_id": "bf36403443"
+    },
+    {
+      "c_symbol": "CString",
+      "expression": "__cgoprof_end_32 := prof.BeginCall(\"d612b7c51d\", \"CString\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 795,
+      "site_id": "d612b7c51d"
+    },
+    {
+      "c_symbol": "free",
+      "expression": "__cgoprof_end_34 := prof.BeginCall(\"68e8688b67\", \"free\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 801,
+      "site_id": "68e8688b67"
+    },
+    {
+      "c_symbol": "_sqlite3_create_module_eponymous_only",
+      "expression": "__cgoprof_end_35 := prof.BeginCall(\"d1d11606bc\", \"_sqlite3_create_module_eponymous_only\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 809,
+      "site_id": "d1d11606bc"
+    },
+    {
+      "c_symbol": "_sqlite3_create_module",
+      "expression": "__cgoprof_end_37 := prof.BeginCall(\"b549595d77\", \"_sqlite3_create_module\")",
+      "file": "sqlite3_opt_vtable.go",
+      "function": "goVUpdate",
+      "line": 819,
+      "site_id": "b549595d77"
+    },
+    {
+      "c_symbol": "sqlite3_errcode",
+      "expression": "prof.BeginCall(\"13f44204c8\", \"sqlite3_errcode\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillDBError",
+      "line": 86,
+      "site_id": "13f44204c8"
+    },
+    {
+      "c_symbol": "sqlite3_extended_errcode",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"460b942ffa\", \"sqlite3_extended_errcode\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillDBError",
+      "line": 90,
+      "site_id": "460b942ffa"
+    },
+    {
+      "c_symbol": "sqlite3_errmsg",
+      "expression": "__cgoprof_end_5 := prof.BeginCall(\"9b9c25a1b3\", \"sqlite3_errmsg\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillDBError",
+      "line": 94,
+      "site_id": "9b9c25a1b3"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"f0f73028d4\", \"GoString\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillDBError",
+      "line": 98,
+      "site_id": "f0f73028d4"
+    },
+    {
+      "c_symbol": "sqlite3_expanded_sql",
+      "expression": "__cgoprof_end_9 := prof.BeginCall(\"d953471f4b\", \"sqlite3_expanded_sql\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillExpandedSQL",
+      "line": 108,
+      "site_id": "d953471f4b"
+    },
+    {
+      "c_symbol": "sqlite3_free",
+      "expression": "__cgoprof_end_11 := prof.BeginCall(\"eb92baa133\", \"sqlite3_free\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillExpandedSQL",
+      "line": 113,
+      "site_id": "eb92baa133"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "prof.BeginCall(\"1b5f0c2b16\", \"GoString\")",
+      "file": "sqlite3_trace.go",
+      "function": "fillExpandedSQL",
+      "line": 124,
+      "site_id": "1b5f0c2b16"
+    },
+    {
+      "c_symbol": "sqlite3_get_autocommit",
+      "expression": "__cgoprof_end_15 := prof.BeginCall(\"3b42bdc9df\", \"sqlite3_get_autocommit\")",
+      "file": "sqlite3_trace.go",
+      "function": "traceCallbackTrampoline",
+      "line": 170,
+      "site_id": "3b42bdc9df"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_17 := prof.BeginCall(\"ae8402c7c3\", \"GoString\")",
+      "file": "sqlite3_trace.go",
+      "function": "traceCallbackTrampoline",
+      "line": 183,
+      "site_id": "ae8402c7c3"
+    },
+    {
+      "c_symbol": "sqlite3_trace_v2",
+      "expression": "__cgoprof_end_19 := prof.BeginCall(\"639802ecfe\", \"sqlite3_trace_v2\")",
+      "file": "sqlite3_trace.go",
+      "function": "popTraceMapping",
+      "line": 318,
+      "site_id": "639802ecfe"
+    },
+    {
+      "c_symbol": "sqlite3_column_decltype",
+      "expression": "__cgoprof_end_1 := prof.BeginCall(\"d885a67950\", \"sqlite3_column_decltype\")",
+      "file": "sqlite3_type.go",
+      "function": "<package>",
+      "line": 24,
+      "site_id": "d885a67950"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_3 := prof.BeginCall(\"00293fa82a\", \"GoString\")",
+      "file": "sqlite3_type.go",
+      "function": "<package>",
+      "line": 37,
+      "site_id": "00293fa82a"
+    },
+    {
+      "c_symbol": "sqlite3_column_decltype",
+      "expression": "prof.BeginCall(\"186fbe0ead\", \"sqlite3_column_decltype\")",
+      "file": "sqlite3_type.go",
+      "function": "<package>",
+      "line": 52,
+      "site_id": "186fbe0ead"
+    },
+    {
+      "c_symbol": "GoString",
+      "expression": "__cgoprof_end_7 := prof.BeginCall(\"3b7a43c9e0\", \"GoString\")",
+      "file": "sqlite3_type.go",
+      "function": "<package>",
+      "line": 56,
+      "site_id": "3b7a43c9e0"
+    }
+  ],
+  "directives": {
+    "nocallback": [],
+    "noescape": []
+  }
+}

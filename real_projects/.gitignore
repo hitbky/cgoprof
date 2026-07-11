@@ -1,0 +1,5 @@
+*
+!.gitignore
+!projects.json
+!results/
+!results/.gitkeep

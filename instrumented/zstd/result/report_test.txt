@@ -1,0 +1,41 @@
+CGOProf Analysis Report
+=======================
+
+Call sites: 46
+Findings: 7
+
+[HIGH] small-call-detector at zstd_stream.go:192 (ZSTD_compressStream2_wrapper)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=7005114, avg_cgo_ns=173.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at errors.go:16 (ZSTD_getErrorName)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1006, avg_cgo_ns=57.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] pointer-check-overhead-detector at zstd.go:77 (ZSTD_getFrameContentSize)
+  cgo pointer checking is a visible part of the cross-language cost.
+  Evidence: pointer_check_count=388, pointer_check_ms=0.019, estimated_ratio=0.34
+  Recommendation: Audit whether the C function stores Go pointers or calls back into Go. If the cgo safety contract holds, consider #cgo noescape or reducing pointer passing.
+
+[MEDIUM] pointer-check-overhead-detector at zstd_stream.go:192 (ZSTD_compressStream2_wrapper)
+  cgo pointer checking is a visible part of the cross-language cost.
+  Evidence: pointer_check_count=7005114, pointer_check_ms=350.256, estimated_ratio=0.224
+  Recommendation: Audit whether the C function stores Go pointers or calls back into Go. If the cgo safety contract holds, consider #cgo noescape or reducing pointer passing.
+
+[MEDIUM] small-call-detector at zstd_stream.go:594 (ZSTD_decompressStream_wrapper)
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1610, avg_cgo_ns=21446.3, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] small-call-detector at 33032ebc66
+  High-frequency small cgo calls spend a large share of time crossing the Go/C boundary.
+  Evidence: call_count=1006, avg_cgo_ns=49.1, boundary_ratio=unknown, reason=high-frequency cgo calls with very small measured total latency
+  Recommendation: Batch work across the cgo boundary or move the loop entirely to Go or C.
+
+[MEDIUM] conversion-copy-detector at 33032ebc66
+  Repeated Go/C data conversion or memory copying appears on this cgo path.
+  Evidence: call_count=1006, conversion_count=1006, conversion_bytes=0, malloc_count=0, free_count=0, memcpy_count=0, memcpy_bytes=0
+  Recommendation: Reuse C buffers, cache stable C strings, pass explicit lengths, or batch conversions.
+

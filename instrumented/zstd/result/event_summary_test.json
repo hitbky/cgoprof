@@ -1,0 +1,34 @@
+{
+  "callsite_count_instrumented_scan": 41,
+  "callsite_count_original_scan": 48,
+  "duration_seconds_approx": 126.904,
+  "event_bytes_by_kind": {
+    "cgo_call": 0,
+    "conversion": 0,
+    "pointer_check": 0,
+    "scheduler": 0
+  },
+  "event_count": 14026009,
+  "event_counts_by_kind": {
+    "cgo_call": 7016212,
+    "conversion": 1006,
+    "pointer_check": 7008729,
+    "scheduler": 62
+  },
+  "finding_count": 7,
+  "first_timestamp_ns": 1782708861207294000,
+  "last_timestamp_ns": 1782708988110869000,
+  "metric_site_count": 46,
+  "profile": "instrumented/zstd/result/cgoprof_test.jsonl",
+  "profile_size_bytes": 2260609851,
+  "rule_counts": {
+    "conversion-copy-detector": 1,
+    "pointer-check-overhead-detector": 2,
+    "small-call-detector": 4
+  },
+  "severity_counts": {
+    "high": 1,
+    "medium": 6
+  },
+  "workload": "test"
+}

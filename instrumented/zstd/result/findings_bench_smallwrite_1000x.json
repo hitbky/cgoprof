@@ -1,0 +1,27 @@
+[
+  {
+    "evidence": {
+      "avg_cgo_ns": 141.2,
+      "boundary_ratio": "unknown",
+      "call_count": 3003,
+      "reason": "high-frequency cgo calls with very small measured total latency"
+    },
+    "recommendation": "Batch work across the cgo boundary or move the loop entirely to Go or C.",
+    "rule": "small-call-detector",
+    "severity": "medium",
+    "site_id": "28ac715d93",
+    "summary": "High-frequency small cgo calls spend a large share of time crossing the Go/C boundary."
+  },
+  {
+    "evidence": {
+      "estimated_ratio": 0.262,
+      "pointer_check_count": 3003,
+      "pointer_check_ms": 0.15
+    },
+    "recommendation": "Audit whether the C function stores Go pointers or calls back into Go. If the cgo safety contract holds, consider #cgo noescape or reducing pointer passing.",
+    "rule": "pointer-check-overhead-detector",
+    "severity": "medium",
+    "site_id": "28ac715d93",
+    "summary": "cgo pointer checking is a visible part of the cross-language cost."
+  }
+]

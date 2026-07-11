@@ -1,0 +1,9 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/DataDog/zstd
+cpu: Apple M5 Pro
+BenchmarkSmallWriteStreamCompression/all-zeros-15         	    1000	      9392 ns/op	   0.11 MB/s	         0.01800 compressed_bytes/op	    1057 B/op	      13 allocs/op
+BenchmarkSmallWriteStreamCompression/count-15             	    1000	      9262 ns/op	   0.11 MB/s	         0.01800 compressed_bytes/op	    1057 B/op	      13 allocs/op
+BenchmarkSmallWriteStreamCompression/random-15            	    1000	     10132 ns/op	   0.10 MB/s	         1.009 compressed_bytes/op	    1058 B/op	      13 allocs/op
+PASS
+ok  	github.com/DataDog/zstd	0.500s

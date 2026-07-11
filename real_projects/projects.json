@@ -1,0 +1,56 @@
+[
+  {
+    "name": "go-sqlite3",
+    "url": "https://github.com/mattn/go-sqlite3.git",
+    "priority": 1,
+    "category": "database",
+    "why": "Widely used SQLite driver implemented with cgo and a bundled SQLite C source path.",
+    "expected_rules": ["small-call-detector", "conversion-copy-detector"],
+    "first_step": "scan and run package benchmarks/tests that repeatedly execute prepared statements"
+  },
+  {
+    "name": "confluent-kafka-go",
+    "url": "https://github.com/confluentinc/confluent-kafka-go.git",
+    "priority": 1,
+    "category": "messaging",
+    "why": "Go client around librdkafka with many Go/C boundary calls and conversion-heavy APIs.",
+    "expected_rules": ["conversion-copy-detector", "callback-pingpong-detector"],
+    "first_step": "scan first; build may require platform-specific librdkafka setup"
+  },
+  {
+    "name": "gopacket",
+    "url": "https://github.com/google/gopacket.git",
+    "priority": 2,
+    "category": "networking",
+    "why": "The pcap package crosses into libpcap and is likely to expose callback or packet-loop boundary costs.",
+    "expected_rules": ["callback-pingpong-detector", "small-call-detector"],
+    "first_step": "scan pcap subpackage; build requires libpcap headers"
+  },
+  {
+    "name": "webp",
+    "url": "https://github.com/chai2010/webp.git",
+    "priority": 2,
+    "category": "image-codec",
+    "why": "Go binding for WebP-style native image encoding/decoding, useful for conversion/copy evaluation.",
+    "expected_rules": ["conversion-copy-detector", "small-call-detector"],
+    "first_step": "scan and benchmark encode/decode paths if bundled C sources build locally"
+  },
+  {
+    "name": "go-sdl2",
+    "url": "https://github.com/veandco/go-sdl2.git",
+    "priority": 3,
+    "category": "graphics",
+    "why": "Large SDL2 binding with many cgo calls; good stress case after lightweight projects work.",
+    "expected_rules": ["small-call-detector", "callback-pingpong-detector"],
+    "first_step": "scan only unless SDL2 development libraries are installed"
+  },
+  {
+    "name": "gocv",
+    "url": "https://github.com/hybridgroup/gocv.git",
+    "priority": 3,
+    "category": "computer-vision",
+    "why": "OpenCV binding with heavy native dependencies and large buffer conversions.",
+    "expected_rules": ["conversion-copy-detector"],
+    "first_step": "scan only first; full build requires OpenCV"
+  }
+]
