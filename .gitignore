@@ -1,2 +1,3 @@
-instrumented/*.jsonl
+/instrumented/**/*.jsonl
+/examples/**/*.jsonl
 .DS_Store
