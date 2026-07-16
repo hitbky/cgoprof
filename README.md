@@ -23,10 +23,12 @@ the end-to-end research workflow:
 ## Repository Layout
 
 - `cgoprof/`: Python analyzer and CLI.
-- `cgoprof/contracts/`: versioned Contract IR, evidence model, condition
-  language, conservative fact lattice, and JSON codec.
+- `cgoprof/contracts/`: versioned Contract IR, content-addressed API identity,
+  exact build Manifest, evidence model, conservative fact lattice, and codecs.
 - `docs/contract_model.md`: normative definition of the seven cgo contract
   attributes and their relationship to later cost analysis.
+- `docs/api_identity_manifest.md`: normative API/provider/signature identity,
+  binding, build snapshot, resolution, and integrity rules.
 - `instrumenter/cgoprof-instrument/`: Go AST source-to-source instrumenter.
 - `runtime_go/cgoprof/`: lightweight Go event recorder.
 - `examples/`: four cgo examples, one per rule.
@@ -58,6 +60,8 @@ From this directory:
 
 ```bash
 python3 -m cgoprof scan examples/small_calls
+python3 -m cgoprof manifest examples/conversion_copy --out api-manifest.json
+python3 -m cgoprof manifest-verify api-manifest.json
 python3 -m cgoprof instrument path/to/go-project
 python3 -m cgoprof analyze examples/profiles/synthetic_all_rules.json
 ```
@@ -70,8 +74,8 @@ cgoprof instrument path/to/go-project
 cgoprof analyze examples/profiles/synthetic_all_rules.json
 ```
 
-Short aliases are also available: `s` for `scan`, `i` for `instrument`, and
-`a` for `analyze`.
+Short aliases are also available: `s` for `scan`, `m` for `manifest`, `i` for
+`instrument`, and `a` for `analyze`.
 
 To write the interaction graph:
 
@@ -148,23 +152,38 @@ runtime interception. This keeps the MVP small and testable. The backend can be
 replaced later by source rewriting, eBPF uprobes, LD_PRELOAD hooks, or Go runtime
 trace integration without changing the graph and rule layer.
 
-## Contract IR
+## Contract IR and API Manifest
 
-The repository now contains the Phase 0/1 foundation for contract-aware cgo
-analysis. The model represents memory access, ownership, lifetime, escape,
-callback behavior, mutability, and physical representation at API,
+The repository contains the Phase 0–2 foundation for contract-aware cgo
+analysis. The Contract IR represents memory access, ownership, lifetime,
+escape, callback behavior, mutability, and physical representation at API,
 parameter, and result granularity. It also preserves build scope, evidence,
-fact status, argument-dependent clauses, merge conflicts, and schema-versioned
-JSON serialization.
+fact status, argument-dependent clauses, and conservative merge conflicts.
+
+Phase 2 adds three separate identity levels:
+
+- provider/signature-based, content-addressed `APIIdentity`;
+- package-local `C.name` to API bindings;
+- an immutable `APIManifest` for one exact target, toolchain, flag, macro,
+  package, and provider configuration.
+
+Manifest readers verify content IDs and referential integrity. Symbol-only
+lookups never become exact resolution; missing provider or ABI-canonical
+signature information remains explicitly unresolved. Contract schema v2 links
+catalogs to exact `manifest_id` and `build_id` values before facts may be used
+as proof; provider releases and canonical parameter types must also match.
 
 The Contract IR is deliberately independent from the current profiler event
-and rule models. Later phases will populate it from cgo intrinsics, directives,
-C/Go static analysis, library annotations, and positive dynamic evidence. At
-this stage the repository defines and tests the IR; it does not yet claim to
-infer complete contracts for arbitrary C libraries.
+and rule models. Project discovery already records authoritative
+`go env`/`go list` build/package data, source digests, call sites, directives, and exact cgo
+intrinsics. Later declaration and semantic frontends will resolve external C
+APIs and populate contracts from C/Go static analysis, curated annotations, and
+positive dynamic evidence. The current implementation does not claim complete
+contract inference for arbitrary C libraries.
 
 See [`docs/contract_model.md`](docs/contract_model.md) for the normative
-semantics and safety rules.
+contract semantics and [`docs/api_identity_manifest.md`](docs/api_identity_manifest.md)
+for identity, Manifest, resolution, and integrity rules.
 
 ## Optimization Benchmarks
 

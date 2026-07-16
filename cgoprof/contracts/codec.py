@@ -57,6 +57,7 @@ def catalog_to_dict(catalog: ContractCatalog) -> dict[str, Any]:
     return {
         "schema_version": catalog.schema_version,
         "generated_by": catalog.generated_by,
+        "manifest_id": catalog.manifest_id,
         "metadata": dict(sorted(catalog.metadata)),
         "contracts": [contract_to_dict(item) for item in sorted(catalog.contracts, key=lambda c: c.api_id)],
     }
@@ -71,6 +72,9 @@ def catalog_from_dict(data: Mapping[str, Any]) -> ContractCatalog:
     return ContractCatalog(
         schema_version=schema_version,
         generated_by=str(data.get("generated_by", "cgoprof")),
+        manifest_id=(
+            None if data.get("manifest_id") is None else str(data.get("manifest_id"))
+        ),
         metadata=metadata,
         contracts=tuple(contract_from_dict(_require_dict(item, "contract")) for item in contracts_data),
     )
@@ -137,12 +141,16 @@ def _scope_to_dict(scope: BuildScope) -> dict[str, Any]:
         "build_tags": list(scope.build_tags),
         "c_macros_fingerprint": scope.c_macros_fingerprint,
         "library_version": scope.library_version,
+        "provider_release_id": scope.provider_release_id,
+        "build_id": scope.build_id,
     }
 
 
 def _scope_from_dict(data: Mapping[str, Any]) -> BuildScope:
     tags = _require_list(data.get("build_tags", []), "build_tags")
     library_version = data.get("library_version")
+    provider_release_id = data.get("provider_release_id")
+    build_id = data.get("build_id")
     return BuildScope(
         go_package=str(data.get("go_package", "")),
         goos=str(data.get("goos", "")),
@@ -150,6 +158,10 @@ def _scope_from_dict(data: Mapping[str, Any]) -> BuildScope:
         build_tags=tuple(str(item) for item in tags),
         c_macros_fingerprint=str(data.get("c_macros_fingerprint", "")),
         library_version=None if library_version is None else str(library_version),
+        provider_release_id=(
+            None if provider_release_id is None else str(provider_release_id)
+        ),
+        build_id=None if build_id is None else str(build_id),
     )
 
 

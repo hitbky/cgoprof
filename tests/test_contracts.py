@@ -5,9 +5,13 @@ import unittest
 
 from cgoprof.contracts import (
     APIContract,
+    APIIdentity,
+    APIKind,
     ArgumentCondition,
     BuildScope,
     Callback,
+    CFunctionSignature,
+    CTypeIdentity,
     ConditionOperator,
     ConditionResult,
     ConditionalClause,
@@ -28,6 +32,8 @@ from cgoprof.contracts import (
     Mutability,
     Ownership,
     ParameterContract,
+    ProviderIdentity,
+    ProviderKind,
     Representation,
     RepresentationKind,
     ResultContract,
@@ -54,6 +60,20 @@ OBSERVED = Evidence(
     kind=EvidenceKind.DYNAMIC_OBSERVATION,
     source="fixture profile",
 )
+TEST_PROVIDER = ProviderIdentity(
+    ProviderKind.SOURCE_BUNDLE,
+    "example.com/fixture",
+    "fixture",
+)
+TEST_API_ID = APIIdentity(
+    provider=TEST_PROVIDER,
+    symbol="fixture",
+    kind=APIKind.FUNCTION,
+    signature=CFunctionSignature(
+        result=CTypeIdentity("c:int"),
+        parameters=(CTypeIdentity("c:int"),),
+    ),
+).api_id
 
 
 class ContractModelTests(unittest.TestCase):
@@ -87,7 +107,7 @@ class ContractModelTests(unittest.TestCase):
     def test_contract_rejects_duplicate_parameter_indices(self) -> None:
         with self.assertRaisesRegex(ValueError, "parameter indices must be unique"):
             APIContract(
-                api_id="pkg:duplicate",
+                api_id=TEST_API_ID,
                 c_symbol="duplicate",
                 parameters=(
                     ParameterContract(0, "left", "void*"),
@@ -112,7 +132,7 @@ class ContractModelTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "unknown parameter 2"):
             APIContract(
-                api_id="pkg:conditional",
+                api_id=TEST_API_ID,
                 c_symbol="conditional",
                 parameters=(ParameterContract(0, "flag", "int"),),
                 clauses=(clause,),
@@ -155,8 +175,8 @@ class ContractCodecTests(unittest.TestCase):
         self.assertEqual(restored, catalog)
         self.assertEqual(dumps_catalog(restored), serialized)
         parsed = json.loads(serialized)
-        self.assertEqual(parsed["schema_version"], 1)
-        self.assertEqual(parsed["contracts"][0]["api_id"], "example/sqlite:sqlite3_bind_text")
+        self.assertEqual(parsed["schema_version"], 2)
+        self.assertEqual(parsed["contracts"][0]["api_id"], contract.api_id)
 
     def test_catalog_rejects_unsupported_schema(self) -> None:
         with self.assertRaisesRegex(ValueError, "unsupported catalog schema version"):
@@ -295,7 +315,24 @@ def _sample_contract() -> APIContract:
         ),
     )
     return APIContract(
-        api_id="example/sqlite:sqlite3_bind_text",
+        api_id=APIIdentity(
+            provider=ProviderIdentity(
+                ProviderKind.PKG_CONFIG,
+                "sqlite.org",
+                "sqlite3",
+            ),
+            symbol="sqlite3_bind_text",
+            signature=CFunctionSignature(
+                result=CTypeIdentity("c:int"),
+                parameters=(
+                    CTypeIdentity("c:sqlite3_stmt*"),
+                    CTypeIdentity("c:int"),
+                    CTypeIdentity("c:const char*"),
+                    CTypeIdentity("c:int"),
+                    CTypeIdentity("c:sqlite3_destructor_type"),
+                ),
+            ),
+        ).api_id,
         c_symbol="sqlite3_bind_text",
         scope=BuildScope(
             go_package="example/sqlite",

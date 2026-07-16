@@ -6,9 +6,10 @@ from typing import Any, Generic, TypeVar
 
 from .conditions import ArgumentCondition
 from .evidence import Evidence, FactStatus, evidence_sort_key
+from .identity import validate_api_id, validate_content_id, validate_manifest_id
 
 
-CONTRACT_SCHEMA_VERSION = 1
+CONTRACT_SCHEMA_VERSION = 2
 T = TypeVar("T")
 
 
@@ -204,12 +205,20 @@ class ParameterContract:
     def __post_init__(self) -> None:
         if self.index < 0:
             raise ValueError("parameter index must be non-negative")
+        if not self.name.strip():
+            raise ValueError("parameter name must not be blank")
+        if not self.c_type.strip():
+            raise ValueError("parameter C type must not be blank")
 
 
 @dataclass(frozen=True)
 class ResultContract:
     c_type: str
     contract: ValueContract = field(default_factory=ValueContract)
+
+    def __post_init__(self) -> None:
+        if not self.c_type.strip():
+            raise ValueError("result C type must not be blank")
 
 
 class ContractTargetKind(str, Enum):
@@ -284,10 +293,20 @@ class BuildScope:
     build_tags: tuple[str, ...] = ()
     c_macros_fingerprint: str = ""
     library_version: str | None = None
+    provider_release_id: str | None = None
+    build_id: str | None = None
 
     def __post_init__(self) -> None:
         if len(set(self.build_tags)) != len(self.build_tags):
             raise ValueError("build tags must be unique")
+        if self.build_id is not None:
+            validate_content_id(self.build_id, expected_kind="cgobuild", expected_version=1)
+        if self.provider_release_id is not None:
+            validate_content_id(
+                self.provider_release_id,
+                expected_kind="cgorelease",
+                expected_version=1,
+            )
         object.__setattr__(self, "build_tags", tuple(sorted(self.build_tags)))
 
 
@@ -311,6 +330,7 @@ class APIContract:
             raise ValueError(f"unsupported contract schema version: {self.schema_version}")
         if not self.api_id.strip():
             raise ValueError("api_id must not be empty")
+        validate_api_id(self.api_id)
         if not self.c_symbol.strip():
             raise ValueError("c_symbol must not be empty")
         if not isinstance(self.callback.value, Callback):
@@ -341,12 +361,15 @@ class APIContract:
 class ContractCatalog:
     contracts: tuple[APIContract, ...] = ()
     generated_by: str = "cgoprof"
+    manifest_id: str | None = None
     metadata: tuple[tuple[str, str], ...] = ()
     schema_version: int = CONTRACT_SCHEMA_VERSION
 
     def __post_init__(self) -> None:
         if self.schema_version != CONTRACT_SCHEMA_VERSION:
             raise ValueError(f"unsupported catalog schema version: {self.schema_version}")
+        if self.manifest_id is not None:
+            validate_manifest_id(self.manifest_id)
         object.__setattr__(self, "contracts", tuple(sorted(self.contracts, key=lambda item: item.api_id)))
         object.__setattr__(self, "metadata", tuple(sorted(self.metadata)))
         identifiers = [contract.api_id for contract in self.contracts]

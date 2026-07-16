@@ -5,7 +5,16 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 
+from .contracts import (
+    DiscoveryOptions,
+    ManifestCompleteness,
+    ManifestDiscoveryError,
+    discover_project_manifest,
+    dumps_manifest,
+    load_manifest,
+)
 from .graph import InteractionGraph, iter_events
 from .report import render_text_report
 from .rules import run_rules
@@ -44,6 +53,37 @@ def main(argv: list[str] | None = None) -> int:
     analyze_parser.add_argument("--graph-out", "--graph", dest="graph_out", help="Write CGO Interaction Graph as JSON")
     analyze_parser.add_argument("--json", action="store_true", help="Emit findings as JSON")
 
+    manifest_parser = subparsers.add_parser(
+        "manifest",
+        aliases=["m"],
+        help="Build a content-addressed cgo API identity manifest",
+    )
+    manifest_parser.add_argument(
+        "root",
+        nargs="?",
+        default=".",
+        help="Go module root; defaults to current directory",
+    )
+    manifest_parser.add_argument("-o", "--out", help="Write manifest JSON to this path")
+    manifest_parser.add_argument(
+        "--tags",
+        action="append",
+        default=[],
+        help="Comma-separated Go build tags; may be repeated",
+    )
+    manifest_parser.add_argument("--goos", help="Override GOOS during discovery")
+    manifest_parser.add_argument("--goarch", help="Override GOARCH during discovery")
+    manifest_parser.add_argument(
+        "--require-complete",
+        action="store_true",
+        help="Fail when any C.name binding lacks an exact provider/signature identity",
+    )
+    verify_manifest_parser = subparsers.add_parser(
+        "manifest-verify",
+        help="Verify manifest schema, referential integrity, and content id",
+    )
+    verify_manifest_parser.add_argument("path", help="Manifest JSON to verify")
+
     args = parser.parse_args(argv)
     if args.command == "scan":
         return _cmd_scan(Path(args.root), args.json)
@@ -51,6 +91,10 @@ def main(argv: list[str] | None = None) -> int:
         return _cmd_instrument(args)
     if args.command == "analyze":
         return _cmd_analyze(args)
+    if args.command in {"manifest", "m"}:
+        return _cmd_manifest(args)
+    if args.command == "manifest-verify":
+        return _cmd_manifest_verify(args)
     raise AssertionError(args.command)
 
 
@@ -120,6 +164,64 @@ def _cmd_analyze(args: argparse.Namespace) -> int:
         print(json.dumps([finding.__dict__ for finding in findings], indent=2, sort_keys=True))
     else:
         print(render_text_report(graph, findings))
+    return 0
+
+
+def _cmd_manifest(args: argparse.Namespace) -> int:
+    tags = tuple(
+        sorted(
+            {
+                tag.strip()
+                for group in args.tags
+                for tag in group.split(",")
+                if tag.strip()
+            }
+        )
+    )
+    try:
+        manifest = discover_project_manifest(
+            args.root,
+            DiscoveryOptions(
+                goos=args.goos,
+                goarch=args.goarch,
+                build_tags=tags,
+            ),
+        )
+    except (ManifestDiscoveryError, ValueError) as error:
+        print(f"cgoprof manifest: {error}", file=sys.stderr)
+        return 2
+    if args.out:
+        try:
+            Path(args.out).write_text(dumps_manifest(manifest), encoding="utf-8")
+        except OSError as error:
+            print(f"cgoprof manifest: cannot write {args.out}: {error}", file=sys.stderr)
+            return 2
+        print(
+            f"wrote {manifest.completeness.value} manifest {manifest.manifest_id} "
+            f"to {args.out}"
+        )
+    else:
+        print(dumps_manifest(manifest), end="")
+    if args.require_complete and manifest.completeness != ManifestCompleteness.COMPLETE:
+        print(
+            f"manifest is partial: {len(manifest.unresolved)} unresolved bindings",
+            file=sys.stderr,
+        )
+        return 2
+    return 0
+
+
+def _cmd_manifest_verify(args: argparse.Namespace) -> int:
+    try:
+        manifest = load_manifest(args.path)
+    except (OSError, ValueError) as error:
+        print(f"invalid API manifest: {error}", file=sys.stderr)
+        return 2
+    print(
+        f"valid {manifest.completeness.value} manifest {manifest.manifest_id}: "
+        f"{len(manifest.apis)} APIs, {len(manifest.bindings)} exact bindings, "
+        f"{len(manifest.unresolved)} unresolved"
+    )
     return 0
 
 

@@ -15,7 +15,7 @@ cost attribution and optimization legality. In particular, a high-frequency
 copy, pointer transfer, or callback is only a hotspot until the contract and
 call-site facts show that a semantics-preserving alternative may exist.
 
-The first version of the Contract IR has four design goals:
+The Contract IR has four design goals:
 
 1. represent the seven core contract attributes without defaulting unknown
    behavior to safe behavior;
@@ -28,8 +28,8 @@ The first version of the Contract IR has four design goals:
 
 Contracts are not flat labels attached only to a C symbol. The IR distinguishes:
 
-- **API scope**: the Go package, C symbol, normalized signature, target, build
-  tags, C macro fingerprint, and library version that identify one API variant;
+- **API scope**: a content-addressed API identity linked through a build
+  Manifest to the Go package, target, flags, macros, and library release;
 - **function effects**: currently the callback contract, with room for later
   blocking, thread-affinity, ordering, and global-side-effect summaries;
 - **parameter contracts**: memory access, ownership, lifetime, escape,
@@ -38,9 +38,10 @@ Contracts are not flat labels attached only to a C symbol. The IR distinguishes:
 - **conditional clauses**: facts that apply only when call arguments satisfy
   specified predicates.
 
-The same C symbol in different Go packages or build configurations may have
-different contracts. A future API catalog must therefore compute an `api_id`
-from package and build context rather than using the C symbol alone.
+The same C symbol in different providers or build configurations may have
+different contracts. Phase 2 defines `api_id` from provider and ABI-canonical
+signature, then records package-local `C.name` bindings in an exact build
+Manifest. See `docs/api_identity_manifest.md`.
 
 ## 3. The Seven Core Attributes
 
@@ -295,6 +296,8 @@ GOOS / GOARCH
 build tags
 C preprocessor macro fingerprint
 linked library version, when known
+exact content-addressed provider release id
+exact content-addressed build id
 ```
 
 The same C symbol may resolve to different implementations under different
@@ -336,19 +339,26 @@ does not invent timing values.
 
 ## 9. Serialization and Compatibility
 
-The initial JSON schema version is `1`. A contract catalog contains:
+Contract JSON schema version is `2`. A contract catalog contains:
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "generated_by": "cgoprof",
+  "manifest_id": "cgomanifest:v1:<sha256>",
   "contracts": []
 }
 ```
 
 Serialization must be deterministic. Readers reject unsupported schema
-versions, duplicate API identifiers, malformed target indices, and assignments
-whose values do not match their attribute type.
+versions, free-form or malformed API identifiers, duplicate API identifiers,
+malformed target indices, and assignments whose values do not match their
+attribute type. Proof-grade consumers additionally require exact
+`manifest_id`/`build_id` linkage.
+
+Schema v1 catalogs used free-form API labels and cannot be upgraded without
+provider/signature evidence. Readers therefore reject v1 rather than inventing
+content-addressed identities; producers must regenerate them with a Manifest.
 
 The Contract IR is separate from the current runtime profile schema. Existing
 profiles remain readable without a contract catalog and produce only baseline

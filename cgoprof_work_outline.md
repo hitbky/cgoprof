@@ -305,7 +305,7 @@ cs := C.CString(s)
 
 contract 结果需要携带 provenance 和置信度，例如 `declared`、`statically_proven`、`dynamically_observed`、`user_asserted`、`unknown`。动态运行中未观察到 escape 或 callback 不能单独作为不存在该行为的证明；缺少可靠信息时必须降级为 L0/L1 并要求人工审核。
 
-当前原型仅扫描 directive 和部分 pointer/callback 语法模式，还没有完整 contract inference。这是从经验规则升级为可证明诊断的关键计划工作。
+当前实现已经完成七属性 Contract IR，以及内容寻址的 API Identity、package-local `C.name` binding、精确 Build Manifest、unresolved/ambiguity 隔离和 Contract–Manifest fail-closed 链接；项目发现器可从 `go env`/`go list` 建立真实构建快照，并精确识别 cgo intrinsic。任意外部 C API 的 provider/ABI canonical signature 提取、C body effect summary 和完整 contract inference 仍需在后续静态分析阶段实现。
 
 ### 6.5 Boundary Cost Decomposition
 
@@ -762,7 +762,7 @@ CGOProf 将 cgo 边界低效形式化为“动态交互模式与 Go/C API contra
 1. 可见总时间究竟由 C 本体工作还是边界语义成本造成？
 2. 某项成本是必要的 contract enforcement，还是在当前 API contract 下可安全避免？
 
-该分析把“高频行为”与“可消除低效”分开，并为 finding 及后续 rewrite 提供可审计证据。当前状态：动态事件和部分 directive/pointer pattern 已实现；完整 contract summary、C side effect analysis、成本校准与误差评估尚未实现。
+该分析把“高频行为”与“可消除低效”分开，并为 finding 及后续 rewrite 提供可审计证据。当前状态：动态事件、七属性 Contract IR、API Identity/Build Manifest、部分 directive/pointer pattern 已实现；外部 C declaration/body summary、完整 contract inference、成本校准与误差评估尚未实现。
 
 ### 11.3 创新三：Ownership-Aware CGO Interaction Graph
 
