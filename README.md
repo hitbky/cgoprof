@@ -23,6 +23,10 @@ the end-to-end research workflow:
 ## Repository Layout
 
 - `cgoprof/`: Python analyzer and CLI.
+- `cgoprof/contracts/`: versioned Contract IR, evidence model, condition
+  language, conservative fact lattice, and JSON codec.
+- `docs/contract_model.md`: normative definition of the seven cgo contract
+  attributes and their relationship to later cost analysis.
 - `instrumenter/cgoprof-instrument/`: Go AST source-to-source instrumenter.
 - `runtime_go/cgoprof/`: lightweight Go event recorder.
 - `examples/`: four cgo examples, one per rule.
@@ -143,6 +147,24 @@ The Go runtime package records explicit events instead of claiming transparent
 runtime interception. This keeps the MVP small and testable. The backend can be
 replaced later by source rewriting, eBPF uprobes, LD_PRELOAD hooks, or Go runtime
 trace integration without changing the graph and rule layer.
+
+## Contract IR
+
+The repository now contains the Phase 0/1 foundation for contract-aware cgo
+analysis. The model represents memory access, ownership, lifetime, escape,
+callback behavior, mutability, and physical representation at API,
+parameter, and result granularity. It also preserves build scope, evidence,
+fact status, argument-dependent clauses, merge conflicts, and schema-versioned
+JSON serialization.
+
+The Contract IR is deliberately independent from the current profiler event
+and rule models. Later phases will populate it from cgo intrinsics, directives,
+C/Go static analysis, library annotations, and positive dynamic evidence. At
+this stage the repository defines and tests the IR; it does not yet claim to
+infer complete contracts for arbitrary C libraries.
+
+See [`docs/contract_model.md`](docs/contract_model.md) for the normative
+semantics and safety rules.
 
 ## Optimization Benchmarks
 

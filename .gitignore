@@ -1,3 +1,5 @@
 /instrumented/**/*.jsonl
 /examples/**/*.jsonl
 .DS_Store
+__pycache__/
+*.py[cod]
