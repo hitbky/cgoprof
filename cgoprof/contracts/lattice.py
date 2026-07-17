@@ -9,10 +9,8 @@ from .model import (
     ContractAttribute,
     ContractFact,
     Escape,
-    Lifetime,
     MemoryAccess,
     Mutability,
-    Ownership,
     Representation,
     RepresentationKind,
 )
@@ -177,6 +175,15 @@ def _join_representation(
     if left.kind == RepresentationKind.UNKNOWN:
         return right, False
     if right.kind == RepresentationKind.UNKNOWN:
+        return left, False
+    refinements = {
+        RepresentationKind.C_STRING,
+        RepresentationKind.POINTER_LENGTH,
+        RepresentationKind.FIXED_ARRAY,
+    }
+    if left.kind == RepresentationKind.RAW_BYTES and right.kind in refinements:
+        return right, False
+    if right.kind == RepresentationKind.RAW_BYTES and left.kind in refinements:
         return left, False
     return Representation.unknown(), True
 

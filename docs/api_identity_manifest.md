@@ -119,6 +119,13 @@ but rejects conflicting non-missing measurements.
 cgo pseudo-functions use an explicit `cgo-pseudo-v1` ABI tag and canonical
 Go/C pseudo-types. They cannot collide with external C functions.
 
+Phase 4 implements the declaration frontend with Clang JSON AST. It resolves
+typedefs, extracts calling shape and target ABI, probes type size/alignment,
+preserves declarations, and qualifies package-local static linkage by
+translation-unit content. Exact binding still requires an explicit provider
+(or the content-addressed package-local source provider); the frontend does not
+guess providers from names.
+
 ## 4. Content-Addressed IDs
 
 All stable identifiers use:

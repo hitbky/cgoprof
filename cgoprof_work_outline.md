@@ -305,7 +305,7 @@ cs := C.CString(s)
 
 contract 结果需要携带 provenance 和置信度，例如 `declared`、`statically_proven`、`dynamically_observed`、`user_asserted`、`unknown`。动态运行中未观察到 escape 或 callback 不能单独作为不存在该行为的证明；缺少可靠信息时必须降级为 L0/L1 并要求人工审核。
 
-当前实现已经完成七属性 Contract IR，以及内容寻址的 API Identity、package-local `C.name` binding、精确 Build Manifest、unresolved/ambiguity 隔离和 Contract–Manifest fail-closed 链接；项目发现器可从 `go env`/`go list` 建立真实构建快照，并精确识别 cgo intrinsic。任意外部 C API 的 provider/ABI canonical signature 提取、C body effect summary 和完整 contract inference 仍需在后续静态分析阶段实现。
+当前实现已经完成七属性 Contract IR、内容寻址的 API Identity、package-local `C.name` binding、精确 Build Manifest、unresolved/ambiguity 隔离和 Contract–Manifest fail-closed 链接；项目发现器可从 `go env`/`go list` 建立真实构建快照。阶段 3/4 进一步完成了五个 cgo intrinsic 的全属性 Contract、严格版本化且内容寻址的 Annotation Contract、基于 Clang JSON AST 的 typedef/ABI canonical C signature 与 size/alignment 提取，以及局部 alias、ownership/escape、callback、allocator/libc effect 和直接调用图 fixed-point 传播的 C Function Summary。未知 external/indirect callee 会显式产生 `read_write + may_escape + may_callback` 与 incomplete diagnostic，而不会被当作安全 unknown；推断结果通过 exact provider、release、build、manifest、API 和 Go package binding 后才进入保守 merge lattice。详细设计、CLI 和 proof boundary 见 `docs/contract_inference.md`。
 
 ### 6.5 Boundary Cost Decomposition
 

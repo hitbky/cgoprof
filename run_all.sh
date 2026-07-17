@@ -8,6 +8,33 @@ export GOCACHE="${GOCACHE:-/private/tmp/go-build-cache}"
 
 python3 -m unittest discover -s tests
 
+python3 -m cgoprof contract-infer examples/small_calls \
+  --manifest-out /tmp/cgoprof-contract-manifest.json \
+  --out /tmp/cgoprof-contracts.json \
+  --summary-out /tmp/cgoprof-c-summaries.json \
+  --require-complete
+
+python3 -m cgoprof contract-verify \
+  /tmp/cgoprof-contracts.json \
+  /tmp/cgoprof-contract-manifest.json
+
+python3 - /tmp/cgoprof-c-summaries.json <<'PY'
+import json
+import sys
+
+data = json.load(open(sys.argv[1], encoding="utf-8"))
+summaries = {
+    summary["symbol"]: summary
+    for unit in data["translation_units"]
+    for summary in unit["summaries"]
+}
+add_one = summaries.get("add_one")
+if add_one is None or not add_one["complete"]:
+    raise SystemExit("missing complete C function summary for add_one")
+if add_one["callback"] != "no_callback":
+    raise SystemExit(f"unexpected add_one callback summary: {add_one['callback']}")
+PY
+
 python3 -m cgoprof.cli analyze \
   --profile examples/profiles/synthetic_all_rules.json \
   --json > /tmp/cgoprof-synthetic-findings.json

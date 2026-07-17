@@ -12,7 +12,6 @@ from typing import Any, Iterable, Mapping
 from ..scanner import c_identifier_may_be_shadowed, scan_cgo_references
 from .identity import (
     APIIdentity,
-    APIKind,
     BuildContext,
     CFunctionSignature,
     CTypeIdentity,
@@ -20,8 +19,6 @@ from .identity import (
     GoPackageIdentity,
     Linkage,
     MacroDefinition,
-    ProviderIdentity,
-    ProviderKind,
     TargetABI,
     ToolchainIdentity,
 )
@@ -39,6 +36,7 @@ from .manifest import (
     UnresolvedBinding,
     UnresolvedReason,
 )
+from .intrinsics import intrinsic_manifest_api, intrinsic_provider_record
 
 
 class ManifestDiscoveryError(RuntimeError):
@@ -277,15 +275,7 @@ def discover_project_manifest(
         label="go list",
     )
     assembler = ManifestAssembler(build, generated_by="cgoprof manifest")
-    intrinsic_provider = ProviderRecord(
-        identity=ProviderIdentity(
-            kind=ProviderKind.CGO_INTRINSIC,
-            namespace="go.dev/cgo",
-            name="cgo",
-        ),
-        version=build.toolchain.go_version,
-        abi_version="cgo-pseudo-v1",
-    )
+    intrinsic_provider = intrinsic_provider_record(build.toolchain.go_version)
     used_intrinsics = False
     for package_item in package_data:
         if not isinstance(package_item, dict):
@@ -331,7 +321,7 @@ def discover_project_manifest(
                     directives_by_symbol.setdefault(symbol, set()).add(directive)
         symbols = sorted({*calls_by_symbol, *directives_by_symbol})
         for symbol in symbols:
-            intrinsic = _intrinsic_api(symbol, intrinsic_provider.identity)
+            intrinsic = intrinsic_manifest_api(symbol, intrinsic_provider.identity)
             uses = tuple(calls_by_symbol.get(symbol, ()))
             directives = tuple(directives_by_symbol.get(symbol, ()))
             if intrinsic is not None:
@@ -464,42 +454,6 @@ def _source_digest(root: Path, files: Iterable[str]) -> str:
         digest.update(len(data).to_bytes(8, "big"))
         digest.update(data)
     return digest.hexdigest()
-
-
-def _intrinsic_api(
-    symbol: str,
-    provider: ProviderIdentity,
-) -> ManifestAPI | None:
-    types = {
-        "go_string": CTypeIdentity("go:string"),
-        "go_bytes": CTypeIdentity("go:[]byte"),
-        "c_char_ptr": CTypeIdentity("c:char*"),
-        "c_const_char_ptr": CTypeIdentity("c:const char*"),
-        "c_void_ptr": CTypeIdentity("c:void*"),
-        "c_int": CTypeIdentity("c:int"),
-    }
-    definitions: dict[str, tuple[str, tuple[str, ...]]] = {
-        "CString": ("c_char_ptr", ("go_string",)),
-        "CBytes": ("c_void_ptr", ("go_bytes",)),
-        "GoString": ("go_string", ("c_const_char_ptr",)),
-        "GoStringN": ("go_string", ("c_const_char_ptr", "c_int")),
-        "GoBytes": ("go_bytes", ("c_void_ptr", "c_int")),
-    }
-    definition = definitions.get(symbol)
-    if definition is None:
-        return None
-    result_name, parameter_names = definition
-    identity = APIIdentity(
-        provider=provider,
-        symbol=symbol,
-        kind=APIKind.CGO_INTRINSIC,
-        signature=CFunctionSignature(
-            result=types[result_name],
-            parameters=tuple(types[name] for name in parameter_names),
-            abi_tag="cgo-pseudo-v1",
-        ),
-    )
-    return ManifestAPI(identity=identity, declarations=())
 
 
 def _target_abi(goos: str, goarch: str, target_triple: str) -> TargetABI:

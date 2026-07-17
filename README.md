@@ -29,6 +29,8 @@ the end-to-end research workflow:
   attributes and their relationship to later cost analysis.
 - `docs/api_identity_manifest.md`: normative API/provider/signature identity,
   binding, build snapshot, resolution, and integrity rules.
+- `docs/contract_inference.md`: intrinsic/annotation sources, Clang signature
+  extraction, C function summaries, conservative inference, and CLI workflow.
 - `instrumenter/cgoprof-instrument/`: Go AST source-to-source instrumenter.
 - `runtime_go/cgoprof/`: lightweight Go event recorder.
 - `examples/`: four cgo examples, one per rule.
@@ -62,6 +64,13 @@ From this directory:
 python3 -m cgoprof scan examples/small_calls
 python3 -m cgoprof manifest examples/conversion_copy --out api-manifest.json
 python3 -m cgoprof manifest-verify api-manifest.json
+python3 -m cgoprof contract-infer examples/small_calls \
+  --manifest-out /tmp/cgoprof-manifest.json \
+  --out /tmp/cgoprof-contracts.json \
+  --summary-out /tmp/cgoprof-c-summaries.json \
+  --require-complete
+python3 -m cgoprof contract-verify \
+  /tmp/cgoprof-contracts.json /tmp/cgoprof-manifest.json
 python3 -m cgoprof instrument path/to/go-project
 python3 -m cgoprof analyze examples/profiles/synthetic_all_rules.json
 ```
@@ -154,7 +163,7 @@ trace integration without changing the graph and rule layer.
 
 ## Contract IR and API Manifest
 
-The repository contains the Phase 0–2 foundation for contract-aware cgo
+The repository contains the Phase 0–4 foundation for contract-aware cgo
 analysis. The Contract IR represents memory access, ownership, lifetime,
 escape, callback behavior, mutability, and physical representation at API,
 parameter, and result granularity. It also preserves build scope, evidence,
@@ -174,16 +183,26 @@ catalogs to exact `manifest_id` and `build_id` values before facts may be used
 as proof; provider releases and canonical parameter types must also match.
 
 The Contract IR is deliberately independent from the current profiler event
-and rule models. Project discovery already records authoritative
-`go env`/`go list` build/package data, source digests, call sites, directives, and exact cgo
-intrinsics. Later declaration and semantic frontends will resolve external C
-APIs and populate contracts from C/Go static analysis, curated annotations, and
-positive dynamic evidence. The current implementation does not claim complete
-contract inference for arbitrary C libraries.
+and rule models. Project discovery records authoritative `go env`/`go list`
+build/package data, source digests, call sites, and directives. Phase 3 adds
+complete built-in contracts for the five cgo pseudo-functions plus strict,
+content-addressed, trust-gated annotations. Phase 4 adds Clang-based canonical C
+signatures, layout audit data, package-local/static linkage identity, and
+interprocedural function effect summaries for memory access, ownership,
+lifetime, escape, callback, mutability, and representation.
+
+Unknown external/indirect callees become explicit conservative
+`read_write + may_escape + may_callback` summaries. External declaration-only
+APIs require an explicit provider identity; the tool never guesses a provider
+from a symbol or header. Intrinsic, C analysis, directives, and annotations are
+merged through the conservative lattice and the resulting catalog must link to
+the enriched Manifest before use.
 
 See [`docs/contract_model.md`](docs/contract_model.md) for the normative
 contract semantics and [`docs/api_identity_manifest.md`](docs/api_identity_manifest.md)
-for identity, Manifest, resolution, and integrity rules.
+for identity, Manifest, resolution, and integrity rules. See
+[`docs/contract_inference.md`](docs/contract_inference.md) for the implemented
+Phase 3/4 sources, proof boundaries, and commands.
 
 ## Optimization Benchmarks
 
@@ -215,9 +234,10 @@ research path is already represented:
 - reproducible examples and synthetic fixtures proving the rules fire on cgo
   programs.
 
-The current implementation does not yet perform full SSA, points-to, escape, or
-C-body side-effect analysis. Rules such as automatically proving safe
-`#cgo noescape`/`#cgo nocallback` opportunities or detecting repeated semantic
-serialization across Go and C would require those analyses or API-specific
-models, so they are treated as follow-up research extensions rather than
-implemented rules in this prototype.
+The current C frontend performs Clang-AST local alias/effect analysis and a
+direct-call fixed point; it is not a whole-program LLVM points-to analysis.
+Inline assembly, unresolved indirect calls, dynamically loaded implementations,
+and missing provider bodies invalidate completeness and stay conservative.
+Function-like macro wrapper identity, object-level ownership graph integration,
+cost decomposition, and proof-obligation-driven automatic rewrites remain the
+next implementation phases.

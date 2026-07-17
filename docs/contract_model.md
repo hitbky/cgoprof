@@ -24,6 +24,10 @@ The Contract IR has four design goals:
 4. provide a stable, versioned JSON interchange format for later static
    analysis, dynamic profiling, graph construction, and rewrite checking.
 
+Phases 3 and 4 now provide executable intrinsic, annotation, C signature, and
+C body inference for this IR. See `docs/contract_inference.md` for source
+semantics, conservative completeness rules, and the command-line workflow.
+
 ## 2. Analysis Units
 
 Contracts are not flat labels attached only to a C symbol. The IR distinguishes:
